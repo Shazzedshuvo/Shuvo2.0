@@ -2,18 +2,17 @@ import { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
-    id: 'techlearning-platform',
-    title: 'TechLearning Platform',
-    tagline: 'Interactive Developer Learning & Portfolio Hub',
-    description: 'A high-performance modern web application built with Next.js 15, React 19, and Tailwind CSS. Features course tracks, interactive coding challenges, smooth page transitions, and optimized server-side rendering.',
+    id: 'techlearning-website',
+    title: 'Techlearning-website',
+    tagline: 'Online Learning Platform & Edu Hub',
+    description: 'Developed a fully responsive educational website using Next.js, React.js, and Tailwind CSS. Implemented dynamic course listings, mentor profiles, category filtering, and smooth animations with Framer Motion. Optimized the website for performance, SEO, and mobile responsiveness.',
     category: 'Next.js Apps',
     image: '/gellary/mockup-1.png',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
+    tags: ['Next.js', 'React.js', 'Redux Toolkit', 'JavaScript (ES6+)', 'Tailwind CSS', 'Framer Motion'],
     features: [
-      'Interactive curriculum roadmap with progress tracking',
-      'Dynamic dark/light mode with custom CSS tokens',
-      'Lightning-fast Turbopack compilation and 99+ Lighthouse performance',
-      'Fully responsive UI designed for mobile, tablet, and ultra-wide screens'
+      'Developed a fully responsive educational website using Next.js, React.js, and Tailwind CSS',
+      'Implemented dynamic course listings, mentor profiles, category filtering, and smooth Framer Motion animations',
+      'Optimized the website for performance, SEO, and mobile responsiveness'
     ],
     liveUrl: 'https://techlearning-website.vercel.app/',
     githubUrl: 'https://github.com/Shazzedshuvo',
@@ -21,13 +20,103 @@ export const projectsData: Project[] = [
     year: '2026'
   },
   {
-    id: 'elatronix-store',
-    title: 'Elatronix Electronics Store',
-    tagline: 'Full-Stack MERN E-Commerce Ecosystem',
-    description: 'A robust, scalable eCommerce web application powered by the MERN stack (MongoDB, Express, React, Node.js). Features product catalog filtering, real-time cart persistence, secure Stripe checkout, and admin order analytics.',
+    id: 'tiktok-predictor',
+    title: 'Tiktok-Predictor',
+    tagline: '2026 TikTok Viral Masterclass & Analytics',
+    description: 'Interactive viral prediction platform and algorithm analytics dashboard built with modern React, Next.js, and Tailwind CSS for content creators and marketing agencies.',
+    category: 'Next.js Apps',
+    image: 'https://res.cloudinary.com/r4vxlyup/image/upload/v1789382610/portfolio/projects/ichkfchwypmlph0hdxxn.png',
+    tags: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Analytics'],
+    features: [
+      'Viral probability calculator and content scoring engine',
+      'Interactive creator dashboard with real-time video analytics',
+      'Mobile-first responsive design with instant preview'
+    ],
+    liveUrl: 'https://tiktok-predictor.vercel.app/',
+    githubUrl: 'https://github.com/Shazzedshuvo',
+    featured: true,
+    year: '2026'
+  },
+  {
+    id: 'afrocentric-ai',
+    title: 'Afrocentric AI Intelligence Platform',
+    tagline: 'Cultural Computing & LLM Research Platform',
+    description: 'Cutting-edge artificial intelligence and LLM research initiative celebrating Pan-African tech innovation and cultural computing with interactive 3D web interfaces.',
+    category: 'Creative UI',
+    image: 'https://api.microlink.io?url=https%3A%2F%2Fafrocentric.ai%2F&screenshot=true&meta=false&embed=screenshot.url',
+    tags: ['Full-Stack', 'AI Architecture', 'React.js', 'Next.js', 'Tailwind CSS'],
+    features: [
+      'Interactive AI showcase and knowledge graph exploration',
+      'High-speed server-rendered pages with 98+ performance score',
+      'Modern obsidian dark aesthetic with responsive layouts'
+    ],
+    liveUrl: 'https://afrocentric.ai/',
+    githubUrl: 'https://github.com/Shazzedshuvo',
+    featured: true,
+    year: '2026'
+  },
+  {
+    id: 'weareoneclan-global',
+    title: 'We Are One Clan Global Community',
+    tagline: 'Decentralized Cultural & Humanitarian Alliance',
+    description: 'Global humanitarian alliance and decentralized cultural community uniting innovators and philanthropists worldwide with membership portals and live event streaming.',
     category: 'Full-Stack MERN',
-    image: '/gellary/mockup-2.png',
-    tags: ['MERN Stack', 'React', 'Node.js', 'Express', 'MongoDB', 'Redux'],
+    image: 'https://api.microlink.io?url=https%3A%2F%2Fwww.weareoneclan.com%2F&screenshot=true&meta=false&embed=screenshot.url',
+    tags: ['Full-Stack', 'Next.js', 'Node.js', 'MongoDB', 'REST APIs'],
+    features: [
+      'Decentralized community directory and member portal',
+      'Dynamic event calendar with automated registration flows',
+      'Ultra-fast load times and global CDN optimization'
+    ],
+    liveUrl: 'https://www.weareoneclan.com/',
+    githubUrl: 'https://github.com/Shazzedshuvo',
+    featured: true,
+    year: '2026'
+  },
+  {
+    id: 'solid-seven-agency',
+    title: 'Solid Seven Digital Agency',
+    tagline: 'Branding & Modern UI/UX Showcase',
+    description: 'Branding and modern UI/UX design agency showcase featuring smooth kinetic typography, 3D scroll mechanics, and interactive portfolio grids.',
+    category: 'Creative UI',
+    image: 'https://api.microlink.io?url=https%3A%2F%2Fsolid-seven.webflow.io%2F&screenshot=true&meta=false&embed=screenshot.url',
+    tags: ['Creative UI', 'Webflow', 'JavaScript', '3D Interactions'],
+    features: [
+      'Dynamic page transitions and fluid micro-interactions',
+      'Interactive client case study lightbox with zoom',
+      'SEO-structured metadata for agency brand discovery'
+    ],
+    liveUrl: 'https://solid-seven.webflow.io/',
+    githubUrl: 'https://github.com/Shazzedshuvo',
+    featured: true,
+    year: '2025'
+  },
+  {
+    id: 'atalaia-gold-mining',
+    title: 'Atalaia Gold Mining & Investment',
+    tagline: 'Precious Metals Investor Relations Portal',
+    description: 'Precious metals investment, gold mining exploration, and investor relations portal with real-time financial reporting, compliance dashboards, and stakeholder downloads.',
+    category: 'Full-Stack MERN',
+    image: 'https://api.microlink.io?url=https%3A%2F%2Fatalaiagold.com%2F&screenshot=true&meta=false&embed=screenshot.url',
+    tags: ['Full-Stack', 'Next.js', 'REST APIs', 'Tailwind CSS'],
+    features: [
+      'Investor relations portal with interactive share data charts',
+      'Downloadable PDF financial reports and ESG audit logs',
+      'Secure corporate inquiry routing'
+    ],
+    liveUrl: 'https://atalaiagold.com/',
+    githubUrl: 'https://github.com/Shazzedshuvo',
+    featured: true,
+    year: '2025'
+  },
+  {
+    id: 'elatronix-ecommerce',
+    title: 'ElectroShop MERN E-Commerce',
+    tagline: 'Full-Stack MERN Electronics Store',
+    description: 'High-performance eCommerce web application built with React.js, Redux Toolkit, Node.js, Express.js, and MongoDB. Includes shopping cart, secure Stripe payment gateway, product filtering, and order management.',
+    category: 'Full-Stack MERN',
+    image: '/gellary/mockup-4.png',
+    tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT Auth', 'Redux Toolkit'],
     features: [
       'JWT-authenticated user registration, login, and profile dashboard',
       'MongoDB Atlas cluster with optimized aggregation pipelines',
@@ -40,79 +129,23 @@ export const projectsData: Project[] = [
     year: '2025'
   },
   {
-    id: 'nova-ai-saas',
-    title: 'NovaAI - 3D Generative Platform',
-    tagline: 'Next-Gen 3D SaaS with WebGL & Three.js',
-    description: 'A futuristic SaaS landing page and interactive platform featuring real-time 3D WebGL scenes, interactive mesh distortions, dynamic subscription tiers, and seamless prompt generator interfaces.',
-    category: 'Creative UI',
-    image: '/gellary/mockup-3.png',
-    tags: ['Three.js', 'WebGL', 'Next.js', 'Tailwind CSS', 'GSAP'],
-    features: [
-      'Interactive 3D particle sphere responding to cursor velocity and scroll depth',
-      'Glassmorphic dashboard with live telemetry indicators',
-      'Micro-animations powered by GSAP and custom shaders',
-      'Dark obsidian cyber aesthetic with neon emerald and cyan highlights'
-    ],
-    liveUrl: 'https://shazzedshuvo.vercel.app/',
-    githubUrl: 'https://github.com/Shazzedshuvo',
-    featured: true,
-    year: '2026'
-  },
-  {
-    id: 'softvence-agency',
-    title: 'Softvence Studio Showcase',
-    tagline: 'Digital Agency Portfolio & Case Study Hub',
-    description: 'High-impact creative agency portfolio highlighting bespoke web development, eCommerce solutions, and brand transformation case studies with kinetic typography and smooth scroll physics.',
-    category: 'Creative UI',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
-    tags: ['Next.js', 'React', 'Framer Motion', 'Tailwind CSS', 'Figma'],
-    features: [
-      'Smooth scroll experience with progress indicator bars',
-      'Interactive project showcase carousel with fullscreen lightbox zoom',
-      'Direct lead qualification funnel and booking integration',
-      'Flawless cross-browser rendering with zero layout shift'
-    ],
-    liveUrl: 'https://shazzedshuvo.vercel.app/',
-    githubUrl: 'https://github.com/Shazzedshuvo',
-    featured: true,
-    year: '2026'
-  },
-  {
-    id: 'urbancraft-cms',
-    title: 'UrbanCraft Living CMS',
-    tagline: 'High-Converting Headless eCommerce & CMS',
-    description: 'Custom headless architecture combining Shopify Liquid APIs and WordPress REST endpoints for a luxury architectural furniture brand, enabling blazing speeds and rich editorial control.',
+    id: 'taylors-hostel-travel',
+    title: 'Taylor\'s Hostel & Travel Co',
+    tagline: 'Boutique Youth Hostel & Travel Social Hub',
+    description: 'Vibrant boutique youth hostel and traveler social hub built with room availability calendars, direct booking request funnel, and local city guides.',
     category: 'CMS & eCommerce',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop',
-    tags: ['Shopify', 'WordPress', 'Headless CMS', 'Tailwind CSS', 'REST API'],
+    image: 'https://api.microlink.io?url=https%3A%2F%2Ftaylorshostel.webflow.io%2F&screenshot=true&meta=false&embed=screenshot.url',
+    tags: ['CMS & Platforms', 'Webflow', 'JavaScript', 'Booking UI'],
     features: [
-      'Custom theme templates tailored for conversion optimization',
-      'Synchronized multi-currency checkout and localized shipping calculation',
-      'Dynamic blog & lookbook powered by custom CMS custom post types',
-      'SEO-optimized microdata schemas for rich Google search snippets'
+      'Interactive room type switcher and pricing matrix',
+      'Neighborhood destination guide with interactive spots',
+      'Fast responsive booking conversion funnel'
     ],
-    liveUrl: 'https://shazzedshuvo.vercel.app/',
-    githubUrl: 'https://github.com/Shazzedshuvo',
-    featured: false,
-    year: '2025'
-  },
-  {
-    id: 'documed-portal',
-    title: 'DocuMed Health Cloud',
-    tagline: 'Telemedicine & Clinical Appointment System',
-    description: 'Full-stack MERN healthcare portal allowing patients to browse medical specialists, schedule telehealth appointments, review diagnostic reports, and manage electronic health records.',
-    category: 'Full-Stack MERN',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop',
-    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT Auth'],
-    features: [
-      'Role-based access control (Doctor, Patient, Clinic Administrator)',
-      'Real-time appointment slot calendar with conflict prevention logic',
-      'Secure encrypted medical record upload with file verification',
-      'Automated email notifications and SMS appointment reminders'
-    ],
-    liveUrl: 'https://shazzedshuvo.vercel.app/',
+    liveUrl: 'https://taylorshostel.webflow.io/',
     githubUrl: 'https://github.com/Shazzedshuvo',
     featured: false,
     year: '2025'
   }
 ];
+
+

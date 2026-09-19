@@ -5,13 +5,15 @@ import { Download, Menu, X, Sun, Moon } from 'lucide-react';
 import { siteConfig } from '@/lib/data/siteConfig';
 
 const navItems = [
-  { name: 'About', href: '#hero' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Services', href: '#services' },
-  { name: 'Reviews', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '/#hero' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Projects', href: '/#projects' },
+  { name: "Shuvo's Projects", href: '/shuvos-projects' },
+  { name: 'Portfolio 1.0', href: '/portfolio-1' },
+  { name: 'Gallery', href: '/#gallery' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Reviews', href: '/#testimonials' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -96,9 +98,10 @@ export default function Navbar() {
           </button>
 
           <a
-            href="https://shazzedshuvo.vercel.app/cv2.pdf"
+            href="/shuvos-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            download="Sazzad-Shuvo-CV.pdf"
             className="btn-neumorphic text-xs !px-3 sm:!px-4 !py-1.5 sm:!py-2 inline-flex items-center gap-1.5"
           >
             <span>Resume</span>

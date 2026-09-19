@@ -36,9 +36,10 @@ export default function Footer() {
             Facebook
           </a>
           <a
-            href="https://shazzedshuvo.vercel.app/cv2.pdf"
+            href="/shuvos-cv.pdf"
             target="_blank"
             rel="noreferrer"
+            download="Sazzad-Shuvo-CV.pdf"
             className="transition hover:text-zinc-900 dark:hover:text-white"
           >
             Resume

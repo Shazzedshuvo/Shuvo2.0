@@ -6,63 +6,7 @@ import { FaGithub } from 'react-icons/fa6';
 import ProjectModal from '../ui/ProjectModal';
 import { Project } from '@/lib/types';
 import { siteConfig } from '@/lib/data/siteConfig';
-
-const projects: Project[] = [
-  {
-    id: 'techlearning-platform',
-    title: 'TechLearning Platform',
-    tagline: 'Modern Developer Learning & Portfolio Hub',
-    description: 'A high-performance modern web application built with Next.js 15, React 19, and Tailwind CSS. Features course tracks, interactive challenges, smooth page transitions, and optimized server-side rendering.',
-    category: 'Next.js Apps',
-    image: '/gellary/mockup-1.png',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
-    features: [
-      'Interactive curriculum roadmap with progress tracking',
-      'Dynamic dark/light mode with custom CSS tokens',
-      'Lightning-fast compilation and 99+ Lighthouse performance'
-    ],
-    liveUrl: 'https://techlearning-website.vercel.app/',
-    githubUrl: 'https://github.com/Shazzedshuvo',
-    featured: true,
-    year: '2026'
-  },
-  {
-    id: 'elatronix-store',
-    title: 'ElectroShop E-Commerce',
-    tagline: 'Full-Stack MERN Electronics Store',
-    description: 'Full-featured eCommerce web application built with React, Redux, Node.js, Express, and MongoDB. Includes shopping cart, secure Stripe payment gateway, product filtering, and order management.',
-    category: 'Full-Stack MERN',
-    image: '/gellary/mockup-2.png',
-    tags: ['MERN Stack', 'React', 'Node.js', 'Express', 'MongoDB'],
-    features: [
-      'JWT-authenticated user registration, login, and profile dashboard',
-      'MongoDB Atlas cluster with optimized aggregation pipelines',
-      'Instant search, multi-attribute filtering, and stock level alerts'
-    ],
-    liveUrl: 'https://elatronix-store420.netlify.app/',
-    githubUrl: 'https://github.com/Shazzedshuvo',
-    featured: true,
-    year: '2025'
-  },
-  {
-    id: 'nova-ai-saas',
-    title: 'NovaAI - 3D Generative Platform',
-    tagline: 'Next-Gen 3D SaaS with WebGL & Three.js',
-    description: 'Futuristic 3D WebGL SaaS landing page featuring real-time Three.js mesh distortions, interactive prompt generator interfaces, and responsive pricing matrices.',
-    category: 'Creative UI',
-    image: '/gellary/mockup-3.png',
-    tags: ['Three.js', 'WebGL', 'Next.js', 'Tailwind CSS'],
-    features: [
-      'Interactive 3D particle sphere responding to cursor velocity and scroll depth',
-      'Glassmorphic dashboard with live telemetry indicators',
-      'Dark obsidian cyber aesthetic with neon emerald and cyan highlights'
-    ],
-    liveUrl: 'https://shazzedshuvo.vercel.app/',
-    githubUrl: 'https://github.com/Shazzedshuvo',
-    featured: true,
-    year: '2026'
-  }
-];
+import { projectsData as projects } from '@/lib/data/projectsData';
 
 export default function SelectedWork() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
@@ -174,6 +118,73 @@ export default function SelectedWork() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Dedicated Portals Banner */}
+          <div className="mt-14 grid gap-4 sm:grid-cols-2">
+            <div className="group relative overflow-hidden rounded-3xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent p-6 backdrop-blur-xl transition hover:border-amber-500/60 dark:border-white/10 dark:hover:border-amber-400/40">
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-amber-500/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                  Featured Portal
+                </span>
+                <span className="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+              </div>
+              <h4 className="mt-3 text-lg font-bold text-zinc-900 dark:text-white">
+                Shuvo&apos;s Projects Catalog
+              </h4>
+              <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                Explore the dedicated project portal featuring full-stack applications &amp; experiments at shuvos-projects.vercel.app.
+              </p>
+              <div className="mt-4 flex items-center gap-3">
+                <a
+                  href="/shuvos-projects"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-1.5 text-xs font-bold text-white shadow-md transition hover:scale-105"
+                >
+                  <span>Open Page</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                <a
+                  href="https://shuvos-projects.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-amber-600 dark:text-amber-400 hover:underline"
+                >
+                  shuvos-projects.vercel.app ↗
+                </a>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-transparent p-6 backdrop-blur-xl transition hover:border-indigo-500/60 dark:border-white/10 dark:hover:border-indigo-400/40">
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-indigo-500/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                  Classic Archive
+                </span>
+                <span className="flex h-2 w-2 rounded-full bg-indigo-500" />
+              </div>
+              <h4 className="mt-3 text-lg font-bold text-zinc-900 dark:text-white">
+                Portfolio 1.0 (Original Edition)
+              </h4>
+              <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+                Take a look back at Portfolio 1.0 and where the engineering journey began at shazzedshuvo.vercel.app.
+              </p>
+              <div className="mt-4 flex items-center gap-3">
+                <a
+                  href="/portfolio-1"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-md transition hover:scale-105"
+                >
+                  <span>Open Page</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                <a
+                  href="https://shazzedshuvo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-indigo-600 dark:text-indigo-400 hover:underline"
+                >
+                  shazzedshuvo.vercel.app ↗
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

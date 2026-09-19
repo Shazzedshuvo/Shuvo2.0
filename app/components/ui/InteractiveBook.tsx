@@ -3,529 +3,526 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  BookOpen,
-  ChevronLeft,
-  ChevronRight,
-  Sparkles,
+  Code2,
+  Terminal,
+  Cpu,
+  Layers,
   GraduationCap,
   Briefcase,
-  Code2,
   Mail,
   Phone,
-  Bookmark,
+  Copy,
+  Check,
   ExternalLink,
   Award,
-  Layers,
-  ArrowRight
+  Sparkles,
+  ArrowRight,
+  Globe,
+  FileText,
+  User,
+  Zap,
+  CheckCircle2,
+  ShieldCheck,
+  FolderGit2
 } from 'lucide-react';
 import { siteConfig } from '@/lib/data/siteConfig';
 
 export default function InteractiveBook() {
-  // 0: Cover, 1: Spread 1 (Chapter 1 & 2), 2: Spread 2 (Chapter 3 & 4)
-  const [currentSpread, setCurrentSpread] = useState<number>(1);
-  const [flipDirection, setFlipDirection] = useState<'next' | 'prev'>('next');
+  // Active Tab: 'narrative' | 'arsenal' | 'experience' | 'education'
+  const [activeTab, setActiveTab] = useState<'narrative' | 'arsenal' | 'experience' | 'education'>('narrative');
+  const [copiedField, setCopiedField] = useState<string | null>(null);
 
-  const totalSpreads = 3; // 0: Cover, 1: Spread 1 (Ch 1 & 2), 2: Spread 2 (Ch 3 & 4)
-
-  const goToSpread = (index: number) => {
-    if (index === currentSpread) return;
-    setFlipDirection(index > currentSpread ? 'next' : 'prev');
-    setCurrentSpread(index);
+  const handleCopy = (text: string, field: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(null), 2000);
   };
 
-  const nextPage = () => {
-    if (currentSpread < totalSpreads - 1) {
-      setFlipDirection('next');
-      setCurrentSpread((prev) => prev + 1);
-    }
-  };
-
-  const prevPage = () => {
-    if (currentSpread > 0) {
-      setFlipDirection('prev');
-      setCurrentSpread((prev) => prev - 1);
-    }
-  };
+  const navTabs = [
+    { id: 'narrative', label: '01. Philosophy & Bio', icon: User, subtitle: 'Mindset & Vision' },
+    { id: 'arsenal', label: '02. Technical Arsenal', icon: Cpu, subtitle: 'MERN & Next.js' },
+    { id: 'experience', label: '03. Career Track', icon: Briefcase, subtitle: 'SoftvenceAgency' },
+    { id: 'education', label: '04. Education & Certs', icon: GraduationCap, subtitle: 'Academics & Dec 2025' },
+  ];
 
   return (
-    <div className="w-full select-none">
-      {/* Book Title Banner & Chapter Navigator */}
-      <div className="mb-6 flex flex-col items-center justify-between gap-4 md:flex-row">
-        {/* Book Badge & Name */}
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-500 shadow-sm dark:border-amber-400/20 dark:bg-amber-400/10">
-            <BookOpen className="h-5 w-5" />
-          </div>
-          <div>
-            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-amber-600 dark:text-amber-400">
-              Interactive Chronicle • বই এর থিম
-            </span>
-            <h3 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white">
-              The Journey of Shazzed Shuvo
-            </h3>
-          </div>
-        </div>
-
-        {/* Chapter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 rounded-2xl border border-black/10 bg-black/[0.03] p-1.5 dark:border-white/10 dark:bg-white/[0.04]">
-          <button
-            onClick={() => goToSpread(0)}
-            className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition-all ${
-              currentSpread === 0
-                ? 'bg-amber-600 text-white shadow-md'
-                : 'text-zinc-600 hover:text-zinc-900 dark:text-white/60 dark:hover:text-white'
-            }`}
-          >
-            📕 Cover
-          </button>
-          <button
-            onClick={() => goToSpread(1)}
-            className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition-all ${
-              currentSpread === 1
-                ? 'bg-amber-600 text-white shadow-md'
-                : 'text-zinc-600 hover:text-zinc-900 dark:text-white/60 dark:hover:text-white'
-            }`}
-          >
-            Ch. 1 &amp; 2: Bio &amp; Stack
-          </button>
-          <button
-            onClick={() => goToSpread(2)}
-            className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition-all ${
-              currentSpread === 2
-                ? 'bg-amber-600 text-white shadow-md'
-                : 'text-zinc-600 hover:text-zinc-900 dark:text-white/60 dark:hover:text-white'
-            }`}
-          >
-            Ch. 3 &amp; 4: Career &amp; Edu
-          </button>
-        </div>
+    <div className="w-full">
+      {/* Top Interactive Glass Navigation Pills */}
+      <div className="mb-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        {navTabs.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`group relative flex items-center gap-2.5 rounded-2xl px-4 py-3 text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                isActive
+                  ? 'text-white shadow-xl shadow-amber-500/15'
+                  : 'border border-zinc-200/80 bg-white/70 text-zinc-600 hover:border-amber-500/40 hover:text-zinc-950 dark:border-white/10 dark:bg-zinc-900/50 dark:text-zinc-400 dark:hover:text-white'
+              }`}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="activeDossierPill"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 shadow-md shadow-amber-500/25"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-2">
+                <Icon className={`h-4 w-4 ${isActive ? 'text-white' : 'text-amber-500 dark:text-amber-400'}`} />
+                <span>{tab.label}</span>
+              </span>
+            </button>
+          );
+        })}
       </div>
 
-      {/* 3D Book Container */}
-      <div className="relative mx-auto w-full max-w-5xl [perspective:2000px]">
-        {/* Book Hardcover Outer Shadow & Thickness */}
-        <div className="relative rounded-[26px] bg-gradient-to-r from-amber-950 via-zinc-900 to-amber-950 p-2.5 sm:p-4 md:p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4),0_0_30px_rgba(245,158,11,0.08)] ring-1 ring-white/10 dark:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8),0_0_40px_rgba(245,158,11,0.12)]">
-          {/* Embossed Border on Cover */}
-          <div className="relative overflow-hidden rounded-[20px] border border-amber-500/30 bg-[#fbf9f4] shadow-inner dark:bg-[#111114]">
-            
-            {/* Hanging Satin Ribbon Bookmark */}
-            <div className="absolute -top-1 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center pointer-events-none">
-              <div className="h-10 w-4 bg-gradient-to-b from-rose-600 to-rose-700 shadow-md" />
-              <div className="w-0 h-0 border-x-8 border-x-transparent border-t-8 border-t-rose-700" />
-            </div>
+      {/* Main Glassmorphic Interactive Deck Container */}
+      <div className="relative mx-auto w-full max-w-5xl rounded-[32px] border border-zinc-200/90 bg-white/80 p-5 sm:p-8 md:p-10 shadow-2xl backdrop-blur-2xl dark:border-white/10 dark:bg-[#0c0c0f]/90">
+        {/* Ambient Top Rim Glow */}
+        <div className="pointer-events-none absolute -top-px left-1/2 -z-10 h-32 w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent blur-2xl" />
 
-            {/* SPREAD 0: COVER VIEW */}
-            {currentSpread === 0 && (
-              <motion.div
-                key="cover"
-                initial={{ opacity: 0, rotateY: flipDirection === 'next' ? 45 : -45 }}
-                animate={{ opacity: 1, rotateY: 0 }}
-                exit={{ opacity: 0, rotateY: -45 }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="relative flex min-h-[460px] sm:min-h-[520px] flex-col items-center justify-center p-8 text-center sm:p-14 bg-gradient-to-br from-[#18181b] via-[#09090b] to-[#1c1917] text-white"
-              >
-                {/* Ornamental Gold Corner Accents */}
-                <div className="absolute left-6 top-6 h-12 w-12 border-l-2 border-t-2 border-amber-500/50" />
-                <div className="absolute right-6 top-6 h-12 w-12 border-r-2 border-t-2 border-amber-500/50" />
-                <div className="absolute bottom-6 left-6 h-12 w-12 border-b-2 border-l-2 border-amber-500/50" />
-                <div className="absolute bottom-6 right-6 h-12 w-12 border-b-2 border-r-2 border-amber-500/50" />
+        <AnimatePresence mode="wait">
+          {/* TAB 1: NARRATIVE & BIO */}
+          {activeTab === 'narrative' && (
+            <motion.div
+              key="tab-narrative"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+              className="grid gap-8 lg:grid-cols-12"
+            >
+              {/* Left Column: Bio Narrative */}
+              <div className="flex flex-col justify-between lg:col-span-7">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-amber-600 dark:text-amber-400 mb-3">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    <span>The Engineering Mindset</span>
+                  </div>
 
-                {/* Cover Emblem */}
-                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-amber-500/40 bg-amber-500/10 shadow-[0_0_25px_rgba(245,158,11,0.2)]">
-                  <BookOpen className="h-10 w-10 text-amber-400" />
+                  <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+                    Turning ideas into{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+                      scalable products.
+                    </span>
+                  </h3>
+
+                  <div className="mt-5 space-y-4 text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-300 font-light">
+                    <p>
+                      Hello! I&apos;m <strong className="font-semibold text-zinc-900 dark:text-white">Sazzad Shuvo</strong> (Md. Sazzad Hossen Shuvo),
+                      a passionate <strong className="text-amber-600 dark:text-amber-400">MERN Stack Developer</strong> with hands-on expertise building responsive, high-performance web applications, eCommerce stores, and CMS websites with clean, maintainable architecture.
+                    </p>
+                    <p>
+                      Having deep hands-on expertise in <strong className="text-zinc-900 dark:text-white">React.js, Next.js, JavaScript, TypeScript, Node.js, Express.js</strong>, and{' '}
+                      <strong className="text-zinc-900 dark:text-white">MongoDB</strong>, I specialize in architecting intuitive user interfaces, REST APIs, reusable components, and high-converting platforms.
+                    </p>
+                    <p>
+                      In addition to custom full-stack software, I develop CMS ecosystems across <strong className="text-zinc-900 dark:text-white">WordPress, Shopify, Wix, Squarespace, and Framer</strong>.
+                    </p>
+                  </div>
                 </div>
 
-                <span className="mb-3 inline-block font-mono text-xs uppercase tracking-[0.35em] text-amber-400/90">
-                  Volume I • The Engineering Chronicle
-                </span>
-
-                <h2 className="max-w-2xl font-serif text-3xl font-extrabold tracking-tight sm:text-5xl text-zinc-100">
-                  A LITTLE ABOUT ME
-                </h2>
-                <div className="mt-2 h-0.5 w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
-
-                <p className="mt-4 max-w-xl text-sm leading-relaxed text-zinc-300 sm:text-base">
-                  The Story, Architectural Philosophy, and Proven Milestones of{' '}
-                  <span className="font-semibold text-amber-300">Md. Shazzed Hossen Shuvo</span>
-                </p>
-
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-                  <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-medium text-amber-300">
-                    Full-Stack MERN
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-xs font-medium text-zinc-300">
-                    softvence.agency
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-xs font-medium text-zinc-300">
-                    Next.js 16 • React 19
-                  </span>
-                </div>
-
-                <div className="mt-8">
-                  <button
-                    onClick={nextPage}
-                    className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-600 to-amber-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-amber-500/25 transition-all hover:scale-105 hover:from-amber-500 hover:to-amber-400"
+                {/* Direct Contact Cards */}
+                <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                  <div
+                    onClick={() => handleCopy(siteConfig.email, 'email')}
+                    className="group flex cursor-pointer items-center justify-between rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-3.5 transition hover:border-amber-500/40 hover:bg-amber-500/5 dark:border-white/10 dark:bg-zinc-900/40 dark:hover:bg-amber-500/10"
+                    title="Click to copy email"
                   >
-                    <span>Open Chronicle &amp; Turn Page</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-                </div>
-
-                <p className="mt-4 text-[11px] font-mono text-zinc-500">
-                  Click button or right edge to flip pages • পৃষ্ঠা উল্টান
-                </p>
-              </motion.div>
-            )}
-
-            {/* SPREAD 1: CHAPTER 1 (ORIGIN) & CHAPTER 2 (STACK) */}
-            {currentSpread === 1 && (
-              <motion.div
-                key="spread1"
-                initial={{ opacity: 0, rotateY: flipDirection === 'next' ? 40 : -40 }}
-                animate={{ opacity: 1, rotateY: 0 }}
-                exit={{ opacity: 0, rotateY: flipDirection === 'next' ? -40 : 40 }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="relative grid min-h-[520px] md:grid-cols-2"
-              >
-                {/* Center Book Spine Stitch & Shadow (Desktop) */}
-                <div className="pointer-events-none absolute inset-y-0 left-1/2 z-20 hidden w-12 -translate-x-1/2 bg-gradient-to-r from-black/15 via-black/5 to-black/15 md:block dark:from-black/40 dark:via-black/10 dark:to-black/40" />
-
-                {/* LEFT PAGE: CHAPTER 1 */}
-                <div
-                  onClick={prevPage}
-                  className="group relative flex flex-col justify-between border-b border-black/10 p-6 sm:p-8 md:border-b-0 md:border-r dark:border-white/10 hover:bg-black/[0.01] transition-colors cursor-pointer"
-                  title="Click to flip to Cover"
-                >
-                  <div>
-                    {/* Page Header */}
-                    <div className="flex items-center justify-between border-b border-black/5 pb-3 dark:border-white/5">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
-                        Chapter I • The Philosophy
-                      </span>
-                      <span className="font-mono text-xs text-zinc-400">Page 01</span>
-                    </div>
-
-                    {/* Chapter Title */}
-                    <h3 className="mt-4 text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-white">
-                      Turning ideas into <span className="text-zinc-400 dark:text-white/40">real products.</span>
-                    </h3>
-
-                    {/* Content with Decorative Dropcap */}
-                    <div className="mt-4 space-y-3.5 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-white/70">
-                      <p>
-                        <span className="float-left mr-3 font-serif text-4xl font-black leading-none text-amber-600 dark:text-amber-400">
-                          H
-                        </span>
-                        ello, I&apos;m{' '}
-                        <strong className="text-zinc-900 dark:text-white">MD. Shazzed Hossen Shuvo</strong>,
-                        a dedicated Full-Stack Developer specializing in crafting robust, conversion-focused web
-                        applications with high aesthetic standards and bulletproof reliability.
-                      </p>
-                      <p>
-                        Having deep hands-on expertise in <strong>React.js, Next.js, Node.js, Express.js</strong>, and{' '}
-                        <strong>MongoDB</strong>, I thrive on translating abstract concepts into high-speed,
-                        user-centric digital realities that solve real-world problems.
-                      </p>
-                      <p>
-                        I work collaboratively by nature, believing that thoughtful design systems and clean code
-                        architecture form the backbone of any scalable digital platform.
-                      </p>
-                    </div>
-
-                    {/* Direct Contact Inset */}
-                    <div className="mt-5 rounded-xl border border-black/5 bg-black/[0.02] p-3.5 text-xs dark:border-white/5 dark:bg-white/[0.02]">
-                      <div className="font-semibold text-zinc-800 dark:text-white/90 mb-1.5">
-                        Author Contact &amp; Reach:
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500">
+                        <Mail className="h-4 w-4" />
                       </div>
-                      <div className="flex flex-col gap-1.5 font-mono text-zinc-600 dark:text-white/60">
-                        <div className="flex items-center gap-2">
-                          <Mail className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
-                          <span>{siteConfig.email}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Phone className="h-3.5 w-3.5 text-emerald-500" />
-                          <span>{siteConfig.phone}</span>
+                      <div className="overflow-hidden">
+                        <div className="text-[10px] font-mono uppercase text-zinc-400">Email Address</div>
+                        <div className="text-xs font-bold font-mono text-zinc-800 dark:text-zinc-200 truncate">
+                          {siteConfig.email}
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Page Footer */}
-                  <div className="mt-6 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500">
-                    <span className="flex items-center gap-1 group-hover:text-amber-600 transition-colors">
-                      <ChevronLeft className="h-3.5 w-3.5" /> ⟵ Flip Back to Cover
+                    <span className="text-xs text-zinc-400 group-hover:text-amber-500">
+                      {copiedField === 'email' ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
                     </span>
-                    <span>MD. SHAZZED HOSSEN SHUVO</span>
                   </div>
-                </div>
 
-                {/* RIGHT PAGE: CHAPTER 2 */}
-                <div
-                  onClick={nextPage}
-                  className="group relative flex flex-col justify-between p-6 sm:p-8 hover:bg-black/[0.01] transition-colors cursor-pointer"
-                  title="Click to flip to Chapter 3 & 4"
-                >
-                  <div>
-                    {/* Page Header */}
-                    <div className="flex items-center justify-between border-b border-black/5 pb-3 dark:border-white/5">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
-                        Chapter II • Technical Arsenal
-                      </span>
-                      <span className="font-mono text-xs text-zinc-400">Page 02</span>
-                    </div>
-
-                    {/* Chapter Title */}
-                    <h3 className="mt-4 text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-white">
-                      The Modern <span className="text-zinc-400 dark:text-white/40">Tooling Stack.</span>
-                    </h3>
-
-                    {/* Stack Highlights */}
-                    <div className="mt-4 space-y-3">
-                      {/* Box 1: Frontend */}
-                      <div className="rounded-xl border border-black/5 bg-black/[0.02] p-3.5 dark:border-white/5 dark:bg-white/[0.02]">
-                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                          <Code2 className="h-3.5 w-3.5" />
-                          <span>Design &amp; Frontend</span>
-                        </div>
-                        <p className="mt-1 text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                          React 19, Next.js 16 (App Router), TypeScript, Tailwind CSS v4, GSAP micro-animations &amp; Three.js
-                        </p>
+                  <div
+                    onClick={() => handleCopy(siteConfig.phone, 'phone')}
+                    className="group flex cursor-pointer items-center justify-between rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-3.5 transition hover:border-emerald-500/40 hover:bg-emerald-500/5 dark:border-white/10 dark:bg-zinc-900/40 dark:hover:bg-emerald-500/10"
+                    title="Click to copy phone"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
+                        <Phone className="h-4 w-4" />
                       </div>
-
-                      {/* Box 2: Backend */}
-                      <div className="rounded-xl border border-black/5 bg-black/[0.02] p-3.5 dark:border-white/5 dark:bg-white/[0.02]">
-                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                          <Layers className="h-3.5 w-3.5" />
-                          <span>Backend &amp; Cloud</span>
-                        </div>
-                        <p className="mt-1 text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                          Node.js, Express.js, MongoDB Atlas, RESTful APIs, JWT Auth &amp; Cloudinary CDN
-                        </p>
-                      </div>
-
-                      {/* Key Stats Chips */}
-                      <div className="grid grid-cols-3 gap-2 pt-2 text-center">
-                        <div className="rounded-lg border border-black/5 bg-black/[0.02] p-2 dark:border-white/5 dark:bg-white/[0.02]">
-                          <div className="text-base font-black text-amber-600 dark:text-amber-400">2+</div>
-                          <div className="text-[10px] uppercase font-bold text-zinc-500">Years Exp</div>
-                        </div>
-                        <div className="rounded-lg border border-black/5 bg-black/[0.02] p-2 dark:border-white/5 dark:bg-white/[0.02]">
-                          <div className="text-base font-black text-emerald-600 dark:text-emerald-400">15+</div>
-                          <div className="text-[10px] uppercase font-bold text-zinc-500">Projects</div>
-                        </div>
-                        <div className="rounded-lg border border-black/5 bg-black/[0.02] p-2 dark:border-white/5 dark:bg-white/[0.02]">
-                          <div className="text-base font-black text-indigo-600 dark:text-indigo-400">100%</div>
-                          <div className="text-[10px] uppercase font-bold text-zinc-500">Commitment</div>
+                      <div>
+                        <div className="text-[10px] font-mono uppercase text-zinc-400">Phone / WhatsApp</div>
+                        <div className="text-xs font-bold font-mono text-zinc-800 dark:text-zinc-200">
+                          {siteConfig.phone}
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Page Footer */}
-                  <div className="mt-6 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500">
-                    <span>THE DEVELOPER&apos;S CHRONICLE</span>
-                    <span className="flex items-center gap-1 font-bold text-amber-600 group-hover:translate-x-1 transition-transform">
-                      Turn to Ch. 3 &amp; 4 <ChevronRight className="h-3.5 w-3.5" />
+                    <span className="text-xs text-zinc-400 group-hover:text-emerald-500">
+                      {copiedField === 'phone' ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
                     </span>
                   </div>
                 </div>
-              </motion.div>
-            )}
+              </div>
 
-            {/* SPREAD 2: CHAPTER 3 (EXPERIENCE) & CHAPTER 4 (EDUCATION) */}
-            {currentSpread === 2 && (
-              <motion.div
-                key="spread2"
-                initial={{ opacity: 0, rotateY: flipDirection === 'next' ? 40 : -40 }}
-                animate={{ opacity: 1, rotateY: 0 }}
-                exit={{ opacity: 0, rotateY: flipDirection === 'next' ? -40 : 40 }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="relative grid min-h-[520px] md:grid-cols-2"
-              >
-                {/* Center Book Spine Stitch & Shadow (Desktop) */}
-                <div className="pointer-events-none absolute inset-y-0 left-1/2 z-20 hidden w-12 -translate-x-1/2 bg-gradient-to-r from-black/15 via-black/5 to-black/15 md:block dark:from-black/40 dark:via-black/10 dark:to-black/40" />
-
-                {/* LEFT PAGE: CHAPTER 3 */}
-                <div
-                  onClick={prevPage}
-                  className="group relative flex flex-col justify-between border-b border-black/10 p-6 sm:p-8 md:border-b-0 md:border-r dark:border-white/10 hover:bg-black/[0.01] transition-colors cursor-pointer"
-                  title="Click to flip to Chapter 1 & 2"
-                >
-                  <div>
-                    {/* Page Header */}
-                    <div className="flex items-center justify-between border-b border-black/5 pb-3 dark:border-white/5">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
-                        Chapter III • Professional Footprint
-                      </span>
-                      <span className="font-mono text-xs text-zinc-400">Page 03</span>
-                    </div>
-
-                    {/* Chapter Title */}
-                    <h3 className="mt-4 text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-white">
-                      softvence.agency <span className="text-zinc-400 dark:text-white/40">&amp; Beyond.</span>
-                    </h3>
-
-                    {/* Role Details */}
-                    <div className="mt-4 space-y-3.5 text-xs sm:text-sm leading-relaxed text-zinc-600 dark:text-white/70">
-                      <div className="rounded-xl border border-black/5 bg-black/[0.02] p-4 dark:border-white/5 dark:bg-white/[0.02]">
-                        <div className="flex items-center justify-between">
-                          <span className="font-bold text-zinc-900 dark:text-white">
-                            Web Developer (Full-Stack)
-                          </span>
-                          <span className="rounded-md bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
-                            Present
-                          </span>
-                        </div>
-                        <p className="mt-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
-                          softvence.agency
-                        </p>
-                        <p className="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-white/70">
-                          Delivering bespoke enterprise client web applications, headless commerce systems, and interactive
-                          landing experiences with sub-second response times.
-                        </p>
-                      </div>
-
-                      {/* Pillars */}
-                      <ul className="space-y-1.5 text-xs text-zinc-700 dark:text-zinc-300">
-                        <li className="flex items-center gap-2">
-                          <span className="text-emerald-500">✓</span> Clean, modular, and maintainable architecture
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <span className="text-emerald-500">✓</span> Fluid micro-animations with GSAP and CSS transforms
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <span className="text-emerald-500">✓</span> 95+ Google Lighthouse speed &amp; SEO score compliance
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Page Footer */}
-                  <div className="mt-6 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500">
-                    <span className="flex items-center gap-1 group-hover:text-amber-600 transition-colors">
-                      <ChevronLeft className="h-3.5 w-3.5" /> ⟵ Turn Back to Ch. 1 &amp; 2
+              {/* Right Column: Key Dossier Stats & Quick Badges */}
+              <div className="flex flex-col justify-between space-y-4 lg:col-span-5">
+                {/* Live Status Card */}
+                <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4.5 backdrop-blur-xl">
+                  <div className="flex items-center gap-2.5">
+                    <span className="relative flex h-3 w-3">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
                     </span>
-                    <span>EXPERIENCE RECORD</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      Active Status
+                    </span>
+                  </div>
+                  <p className="mt-2 text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                    Web Developer at SoftvenceAgency
+                  </p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
+                    Based in Mohakhali, Wireless Gate, Dhaka, Bangladesh
+                  </p>
+                </div>
+
+                {/* Metrics Matrix */}
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-4 text-center dark:border-white/10 dark:bg-zinc-900/40">
+                    <div className="text-2xl font-black text-amber-500 dark:text-amber-400">2+</div>
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Years Exp</div>
+                  </div>
+                  <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-4 text-center dark:border-white/10 dark:bg-zinc-900/40">
+                    <div className="text-2xl font-black text-emerald-500 dark:text-emerald-400">15+</div>
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Projects</div>
+                  </div>
+                  <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-4 text-center dark:border-white/10 dark:bg-zinc-900/40">
+                    <div className="text-2xl font-black text-indigo-500 dark:text-indigo-400">100%</div>
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Commitment</div>
                   </div>
                 </div>
 
-                {/* RIGHT PAGE: CHAPTER 4 */}
-                <div className="relative flex flex-col justify-between p-6 sm:p-8">
-                  <div>
-                    {/* Page Header */}
-                    <div className="flex items-center justify-between border-b border-black/5 pb-3 dark:border-white/5">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
-                        Chapter IV • Academic Foundation
-                      </span>
-                      <span className="font-mono text-xs text-zinc-400">Page 04</span>
-                    </div>
-
-                    {/* Chapter Title */}
-                    <h3 className="mt-4 text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-white">
-                      Education &amp; <span className="text-zinc-400 dark:text-white/40">The Next Chapter.</span>
-                    </h3>
-
-                    {/* Academic Timeline Cards */}
-                    <div className="mt-4 space-y-2.5">
-                      <div className="rounded-xl border border-black/5 bg-black/[0.02] p-3 dark:border-white/5 dark:bg-white/[0.02]">
-                        <span className="text-[10px] font-mono uppercase font-bold text-amber-600 dark:text-amber-400">
-                          B.Sc in CSE • Ongoing
-                        </span>
-                        <h5 className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white">
-                          Computer Science &amp; Engineering
-                        </h5>
-                        <p className="text-[11px] text-zinc-500 dark:text-zinc-400">Uttara University</p>
-                      </div>
-
-                      <div className="rounded-xl border border-black/5 bg-black/[0.02] p-3 dark:border-white/5 dark:bg-white/[0.02]">
-                        <span className="text-[10px] font-mono uppercase font-bold text-zinc-500">
-                          Diploma • Completed
-                        </span>
-                        <h5 className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white">
-                          Computer Technology
-                        </h5>
-                        <p className="text-[11px] text-zinc-500 dark:text-zinc-400">Thakurgaon Polytechnic Institute</p>
-                      </div>
-
-                      <div className="rounded-xl border border-black/5 bg-black/[0.02] p-3 dark:border-white/5 dark:bg-white/[0.02]">
-                        <span className="text-[10px] font-mono uppercase font-bold text-zinc-500">
-                          SSC • Completed
-                        </span>
-                        <h5 className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white">
-                          Science (Vocational)
-                        </h5>
-                        <p className="text-[11px] text-zinc-500 dark:text-zinc-400">Panchagarh Technical School &amp; College</p>
-                      </div>
-                    </div>
-
-                    {/* Next Chapter CTA Box */}
-                    <div className="mt-4 rounded-2xl bg-gradient-to-r from-amber-500/10 to-indigo-500/10 p-3.5 border border-amber-500/20 text-center">
-                      <p className="text-xs font-semibold text-zinc-900 dark:text-white">
-                        Ready to write the next chapter together?
-                      </p>
-                      <a
-                        href="#contact"
-                        className="mt-2 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-1.5 text-xs font-bold text-white transition hover:bg-amber-600 dark:bg-white dark:text-zinc-900 dark:hover:bg-amber-400"
-                      >
-                        <span>Start a Project With Shuvo</span>
-                        <ArrowRight className="h-3.5 w-3.5" />
-                      </a>
-                    </div>
+                {/* Direct Action Hub */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-gradient-to-br from-zinc-900 to-black p-5 text-white shadow-xl dark:border-white/10">
+                  <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 mb-1">
+                    Official Resume Document
                   </div>
-
-                  {/* Page Footer */}
-                  <div className="mt-6 flex items-center justify-between text-[11px] text-zinc-400 dark:text-zinc-500">
-                    <span>THE END OF VOLUME I</span>
-                    <button
-                      onClick={() => goToSpread(0)}
-                      className="font-bold text-amber-600 hover:underline"
+                  <h4 className="text-sm font-bold">
+                    Sazzad Shuvo — MERN Stack Developer
+                  </h4>
+                  <p className="mt-1 text-xs text-zinc-400">
+                    Download complete CV with project links, skills, and certification.
+                  </p>
+                  <div className="mt-4 flex flex-wrap items-center gap-2.5">
+                    <a
+                      href="/shuvos-cv.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download="Sazzad-Shuvo-CV.pdf"
+                      className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-2 text-xs font-bold text-white shadow-md transition hover:scale-105"
                     >
-                      Close Book ⟲
+                      <FileText className="h-3.5 w-3.5" />
+                      <span>Download CV</span>
+                    </a>
+                    <button
+                      onClick={() => setActiveTab('arsenal')}
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-zinc-200 hover:bg-white/20 transition"
+                    >
+                      <span>Explore Tech Stack</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </button>
                   </div>
                 </div>
-              </motion.div>
-            )}
-          </div>
-        </div>
+              </div>
+            </motion.div>
+          )}
 
-        {/* Turn Page Navigation Controls at Bottom */}
-        <div className="mt-6 flex items-center justify-between px-2 sm:px-6">
-          <button
-            onClick={prevPage}
-            disabled={currentSpread === 0}
-            className={`inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs sm:text-sm font-semibold shadow-sm backdrop-blur-md transition-all dark:border-white/10 dark:bg-zinc-900/80 ${
-              currentSpread === 0
-                ? 'opacity-40 cursor-not-allowed text-zinc-400'
-                : 'text-zinc-800 hover:border-amber-500 hover:text-amber-600 dark:text-zinc-200 dark:hover:text-amber-400'
-            }`}
-          >
-            <ChevronLeft className="h-4 w-4" />
-            <span>Previous Page</span>
-          </button>
+          {/* TAB 2: TECHNICAL ARSENAL */}
+          {activeTab === 'arsenal' && (
+            <motion.div
+              key="tab-arsenal"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+              className="space-y-6"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-zinc-200 pb-4 dark:border-white/10">
+                <div>
+                  <div className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-amber-600 dark:text-amber-400">
+                    Skill Categorization // ATS Optimized
+                  </div>
+                  <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
+                    Technical Stack &amp; Tools
+                  </h3>
+                </div>
+                <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                  Full-Stack MERN + CMS Mastery
+                </span>
+              </div>
 
-          {/* Indicator text */}
-          <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-400">
-            <span className="h-2 w-2 rounded-full bg-amber-500 animate-ping" />
-            <span>
-              Spread {currentSpread + 1} of {totalSpreads} (পৃষ্ঠা উল্টান)
-            </span>
-          </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {/* 1. Frontend */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                      <Code2 className="h-4 w-4" />
+                      <span>Frontend Engineering</span>
+                    </div>
+                    <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400">
+                      React 19 &bull; Next.js
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Shadcn/UI', 'Framer Motion'].map((item) => (
+                      <span key={item} className="rounded-xl border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-800 shadow-sm dark:border-white/10 dark:bg-zinc-800/80 dark:text-zinc-200">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
 
-          <button
-            onClick={nextPage}
-            disabled={currentSpread === totalSpreads - 1}
-            className={`inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 py-2 text-xs sm:text-sm font-semibold shadow-sm backdrop-blur-md transition-all dark:border-white/10 dark:bg-zinc-900/80 ${
-              currentSpread === totalSpreads - 1
-                ? 'opacity-40 cursor-not-allowed text-zinc-400'
-                : 'text-zinc-800 hover:border-amber-500 hover:text-amber-600 dark:text-zinc-200 dark:hover:text-amber-400'
-            }`}
-          >
-            <span>Next Page</span>
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
+                {/* 2. Backend */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      <Layers className="h-4 w-4" />
+                      <span>Backend &amp; Databases</span>
+                    </div>
+                    <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                      Node &bull; Express &bull; Mongo
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['Node.js', 'Express.js', 'MongoDB', 'Next.js API Routes', 'REST APIs', 'JWT Authentication', 'Bcrypt.js'].map((item) => (
+                      <span key={item} className="rounded-xl border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-800 shadow-sm dark:border-white/10 dark:bg-zinc-800/80 dark:text-zinc-200">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. CMS & eCommerce */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                      <Globe className="h-4 w-4" />
+                      <span>CMS &amp; eCommerce Systems</span>
+                    </div>
+                    <span className="rounded-full bg-indigo-500/10 px-2 py-0.5 text-[10px] font-mono font-bold text-indigo-600 dark:text-indigo-400">
+                      WordPress &bull; Shopify &bull; Wix
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['WordPress', 'Shopify', 'Wix', 'Squarespace', 'Framer', 'CMS Development', 'Theme Customization', 'eCommerce Development'].map((item) => (
+                      <span key={item} className="rounded-xl border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-800 shadow-sm dark:border-white/10 dark:bg-zinc-800/80 dark:text-zinc-200">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 4. Tools & Other */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
+                      <Zap className="h-4 w-4" />
+                      <span>Tools, Optimization &amp; DevOps</span>
+                    </div>
+                    <span className="rounded-full bg-purple-500/10 px-2 py-0.5 text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400">
+                      Git &bull; Performance &bull; SEO
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['Git', 'GitHub', 'NPM', 'Responsive Web Design', 'API Integration', 'Performance Optimization', 'SEO Optimization'].map((item) => (
+                      <span key={item} className="rounded-xl border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-800 shadow-sm dark:border-white/10 dark:bg-zinc-800/80 dark:text-zinc-200">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* TAB 3: CAREER TRACK */}
+          {activeTab === 'experience' && (
+            <motion.div
+              key="tab-experience"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+              className="space-y-6"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-zinc-200 pb-4 dark:border-white/10">
+                <div>
+                  <div className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-emerald-600 dark:text-emerald-400">
+                    Professional Experience Record
+                  </div>
+                  <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
+                    Industry Experience
+                  </h3>
+                </div>
+                <span className="rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                  2025 – Present
+                </span>
+              </div>
+
+              {/* SoftvenceAgency Main Card */}
+              <div className="rounded-3xl border border-zinc-200/90 bg-gradient-to-br from-zinc-50 via-white to-zinc-50 p-6 sm:p-8 dark:border-white/10 dark:bg-gradient-to-br dark:from-zinc-900/60 dark:via-zinc-950 dark:to-zinc-900/60">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <div>
+                    <h4 className="text-xl font-bold text-zinc-900 dark:text-white">
+                      Web Developer
+                    </h4>
+                    <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 font-mono mt-0.5">
+                      SoftvenceAgency
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 self-start sm:self-auto">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    Full-time &bull; 2025 - Present
+                  </span>
+                </div>
+
+                <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-300 font-light">
+                  Work on modern websites, web applications, eCommerce stores, and CMS-based projects, focusing on responsive development, clean UI implementation, performance optimization, and scalable digital solutions.
+                </p>
+
+                <div className="mt-6 space-y-2.5 border-t border-zinc-200/80 pt-5 dark:border-white/10">
+                  <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>Architecting responsive, conversion-focused web applications with React 19, Next.js, and TypeScript</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>Crafting custom CMS themes and headless eCommerce solutions on WordPress, Shopify, Wix, and Framer</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>Ensuring high performance, fluid animations with Framer Motion, and robust SEO optimization</span>
+                  </div>
+                </div>
+
+                {/* Tech Chips */}
+                <div className="mt-6 flex flex-wrap gap-2 pt-2">
+                  {['Next.js', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'WordPress', 'Shopify', 'Wix', 'Framer', 'Tailwind CSS'].map((tech) => (
+                    <span key={tech} className="rounded-xl border border-zinc-200/80 bg-white/80 px-3 py-1 text-xs font-mono font-medium text-zinc-700 dark:border-white/10 dark:bg-zinc-800/60 dark:text-zinc-300">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* TAB 4: EDUCATION & CERTIFICATIONS */}
+          {activeTab === 'education' && (
+            <motion.div
+              key="tab-education"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35 }}
+              className="space-y-6"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-zinc-200 pb-4 dark:border-white/10">
+                <div>
+                  <div className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-purple-600 dark:text-purple-400">
+                    Academic Foundation &amp; Credentials
+                  </div>
+                  <h3 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
+                    Education &amp; Certification
+                  </h3>
+                </div>
+                <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                  Uttara University &bull; Bdcalling
+                </span>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {/* Degree 1 */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="rounded-full bg-purple-500/10 px-2.5 py-0.5 text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400">
+                      2025 – Present
+                    </span>
+                    <GraduationCap className="h-4 w-4 text-purple-500" />
+                  </div>
+                  <h4 className="text-base font-bold text-zinc-900 dark:text-white">
+                    B.Sc. in Computer Science &amp; Engineering (CSE)
+                  </h4>
+                  <p className="text-xs font-medium text-purple-600 dark:text-purple-400 mt-0.5">
+                    Ongoing — Uttara University
+                  </p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2">
+                    Uttara, Dhaka 1230, Bangladesh
+                  </p>
+                </div>
+
+                {/* Degree 2 */}
+                <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="rounded-full bg-zinc-200 px-2.5 py-0.5 text-[10px] font-mono font-bold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+                      2020 – 2024
+                    </span>
+                    <Award className="h-4 w-4 text-zinc-500" />
+                  </div>
+                  <h4 className="text-base font-bold text-zinc-900 dark:text-white">
+                    Diploma in Computer Technology
+                  </h4>
+                  <p className="text-xs font-medium text-zinc-600 dark:text-zinc-400 mt-0.5">
+                    Completed — Thakurgaon Polytechnic Institute
+                  </p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2">
+                    Thakurgaon, Bangladesh
+                  </p>
+                </div>
+              </div>
+
+              {/* Certification Box */}
+              <div className="rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent p-5">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">
+                  <Award className="h-4 w-4 text-amber-500" />
+                  <span>Professional Certification</span>
+                </div>
+                <h4 className="text-base font-bold text-zinc-900 dark:text-white">
+                  Mastering MERN Stack Web Development
+                </h4>
+                <p className="text-xs text-zinc-600 dark:text-zinc-300 mt-1">
+                  <strong className="text-amber-600 dark:text-amber-400">Bdcalling Academy</strong> &bull; Dec 2025
+                </p>
+              </div>
+
+              {/* Languages Box */}
+              <div className="rounded-2xl border border-zinc-200/90 bg-zinc-50/80 p-5 dark:border-white/10 dark:bg-zinc-900/40">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">
+                  Language Proficiency
+                </div>
+                <div className="flex flex-wrap gap-2.5">
+                  <span className="rounded-xl border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold text-zinc-800 dark:border-white/10 dark:bg-zinc-800 dark:text-zinc-200">
+                    🇧🇩 Bangla: <span className="text-emerald-500 font-normal">Native / Fluent</span>
+                  </span>
+                  <span className="rounded-xl border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold text-zinc-800 dark:border-white/10 dark:bg-zinc-800 dark:text-zinc-200">
+                    🇬🇧 English: <span className="text-indigo-500 font-normal">Professional / Fluent</span>
+                  </span>
+                  <span className="rounded-xl border border-zinc-200 bg-white px-3 py-1 text-xs font-semibold text-zinc-800 dark:border-white/10 dark:bg-zinc-800 dark:text-zinc-200">
+                    🇮🇳 Hindi: <span className="text-amber-500 font-normal">Basic</span>
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
 }
+
+

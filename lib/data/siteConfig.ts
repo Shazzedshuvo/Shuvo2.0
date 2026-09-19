@@ -1,57 +1,70 @@
 export const siteConfig = {
-  name: 'Shazzed Shuvo',
-  title: 'Full-Stack MERN & Next.js Developer',
-  headline: 'Crafting High-Performance Web Apps, 3D Experiences & Scalable Systems',
-  bio: "Full-stack web developer with 2+ years of hands-on expertise building responsive web applications, eCommerce stores, and CMS-driven platforms with clean code, modern UX, and scalable architecture.",
+  name: 'Sazzad Shuvo',
+  fullName: 'Md. Sazzad Hossen Shuvo',
+  title: 'MERN Stack Developer',
+  headline: 'MERN Stack Developer | React.js, Next.js, Node.js, Express.js & MongoDB',
+  bio: "MERN Stack Developer with hands-on experience in React.js, Next.js, JavaScript, TypeScript, Node.js, Express.js, and MongoDB, along with CMS development using WordPress, Shopify, Wix, Squarespace, and Framer. Skilled in building responsive, high-performance web applications, eCommerce stores, CMS websites, reusable components, REST APIs, and modern user interfaces with clean, maintainable code.",
   detailedBio: [
-    "I specialize in Next.js, React, TypeScript, and modern frontend engineering, paired with robust backend services using Node.js, Express, and MongoDB.",
-    "Currently working as a Web Developer at softvence.agency (Jan 2026 – Present), delivering custom web apps, eCommerce ecosystems, and performance-tuned web interfaces for clients globally.",
-    "In addition to custom code, I develop and tailor enterprise CMS solutions across WordPress, Shopify, Wix, Squarespace, and Framer."
+    "MERN Stack Developer with hands-on experience in React.js, Next.js, JavaScript, TypeScript, Node.js, Express.js, and MongoDB.",
+    "Experienced in CMS development using WordPress, Shopify, Wix, Squarespace, and Framer, building responsive, high-performance web applications and eCommerce stores.",
+    "Currently working as a Web Developer at SoftvenceAgency (2025 – Present), focusing on responsive development, clean UI implementation, performance optimization, and scalable digital solutions."
   ],
   email: 'shazzedshuvo@gmail.com',
-  phone: '+880 1719 052 334',
-  location: 'Tetulia, Panchagarh, Bangladesh',
-  availability: 'Available for new projects & full-time roles',
+  phone: '+8801719052334',
+  location: 'Mohakhali, Wireless Gate, Dhaka 1212, Bangladesh',
+  availability: 'Available for MERN & Full-Stack Opportunities',
   yearsExperience: '2+',
-  projectsCompleted: '8+',
+  projectsCompleted: '15+',
   technologiesMastered: '20+',
   codeCommits: '500+',
+  languages: [
+    { language: 'Bangla', level: 'Native / Fluent' },
+    { language: 'English', level: 'Professional / Fluent' },
+    { language: 'Hindi', level: 'Basic' }
+  ],
+  certifications: [
+    {
+      title: 'Mastering MERN Stack Web Development',
+      issuer: 'Bdcalling Academy',
+      date: 'Dec 2025',
+      credential: 'MERN Stack Professional Certification'
+    }
+  ],
+  resumeUrl: '/shuvos-cv.pdf',
   socialLinks: {
     github: 'https://github.com/Shazzedshuvo',
     linkedin: 'https://www.linkedin.com/in/shazzedshuvo/',
     facebook: 'https://www.facebook.com/mdshazzed.hossen.98',
-    youtube: 'https://www.youtube.com/@dontworry4200',
-    portfolio: 'https://shazzedshuvo.vercel.app/'
+    portfolio: 'https://shazzedshuvo.vercel.app/',
+    projectsPortal: 'https://shuvos-projects.vercel.app/',
+    resume: '/shuvos-cv.pdf'
   },
   workExperience: [
     {
       role: 'Web Developer',
-      company: 'softvence.agency',
-      period: 'January 2026 – Present',
+      company: 'SoftvenceAgency',
+      period: '2025 – Present',
       type: 'Full-time',
       status: 'Currently Working',
-      description: 'Developing modern web applications, high-converting eCommerce stores, and headless CMS architectures. Leading responsive development, UI micro-interactions, performance optimization, and REST API integration.',
-      tags: ['Next.js', 'React', 'Node.js', 'MongoDB', 'Shopify', 'WordPress', 'Framer']
+      description: 'Work on modern websites, web applications, eCommerce stores, and CMS-based projects, focusing on responsive development, clean UI implementation, performance optimization, and scalable digital solutions.',
+      tags: ['Next.js', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'WordPress', 'Shopify', 'Wix', 'Framer']
     }
   ],
   education: [
     {
-      degree: 'B.Sc. in Computer Science',
+      degree: 'B.Sc. in Computer Science & Engineering (CSE) – Ongoing',
       institution: 'Uttara University',
-      period: 'Dec 2025 – Present',
-      highlight: 'Specializing in Software Engineering & Data Structures'
+      location: 'Uttara, Dhaka 1230, Bangladesh',
+      period: '2025 – Present',
+      highlight: 'Core Focus: Software Engineering, Data Structures, Algorithms & Cloud'
     },
     {
-      degree: 'Diploma in Computer Technology',
+      degree: 'Diploma in Computer Technology – Completed',
       institution: 'Thakurgaon Polytechnic Institute',
+      location: 'Thakurgaon, Bangladesh',
       period: '2020 – 2024',
-      highlight: 'Graduated with Distinction in Engineering Sciences'
-    },
-    {
-      degree: 'Secondary School Certificate (SSC)',
-      institution: 'Panchagarh Technical School and College',
-      period: '2018 – 2020',
-      highlight: 'Technical Foundation in Information & Computing'
+      highlight: 'Graduated with Comprehensive Computing & Hardware-Software Systems Foundation'
     }
   ]
 };
+
