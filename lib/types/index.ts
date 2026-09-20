@@ -16,7 +16,16 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Backend' | 'Database' | 'CMS & Platforms' | 'Tools & DevOps';
+  category:
+    | 'Frontend'
+    | 'Backend'
+    | 'Database'
+    | 'CMS & Platforms'
+    | 'CMS & eCommerce'
+    | 'Tools & DevOps'
+    | 'Tools & Other'
+    | 'Tools'
+    | 'Languages';
   icon: string;
   color?: string;
   proficiency?: number;
