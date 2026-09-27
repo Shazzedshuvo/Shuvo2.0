@@ -114,17 +114,12 @@ export default function AboutMe() {
             
             {/* CARD 1: PHILOSOPHY & BIO */}
             <div
-              className="project-stack-card group transition-all duration-300"
+              className="project-stack-card group transition-all duration-300 rounded-[32px] overflow-hidden border border-black/10 bg-white/75 shadow-xl shadow-black/5 backdrop-blur-2xl dark:border-white/10 dark:bg-[#09090b]/95 dark:shadow-[0_30px_70px_rgba(0,0,0,0.5)]"
               style={{
                 position: 'sticky',
                 top: '90px',
                 width: '100%',
                 marginBottom: '70px',
-                borderRadius: '32px',
-                overflow: 'hidden',
-                background: '#09090b',
-                boxShadow: '0 30px 70px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255,255,255,0.08)'
               }}
             >
               <div className="relative w-full p-6 sm:p-9 lg:p-10 box-border overflow-hidden">
@@ -132,16 +127,16 @@ export default function AboutMe() {
                 <img
                   src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200"
                   alt="Philosophy"
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-15"
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-5 dark:opacity-15"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/95 to-[#09090b]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/60 to-white/30 dark:from-[#09090b] dark:via-[#09090b]/95 dark:to-[#09090b]/80 pointer-events-none" />
 
                 {/* Card Top Header */}
                 <div className="relative z-10 flex items-center justify-between gap-4 flex-wrap mb-6">
-                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase">
+                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase dark:border-white/10 dark:bg-white/[0.03]">
                     01. PHILOSOPHY &amp; BIO
                   </span>
-                  <span className="px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-white/40 font-mono text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full border border-black/10 bg-black/[0.03] text-zinc-500 font-mono text-xs font-semibold dark:border-white/10 dark:bg-white/[0.03] dark:text-white/40">
                     01/04
                   </span>
                 </div>
@@ -158,22 +153,22 @@ export default function AboutMe() {
                         <span>THE ENGINEERING MINDSET</span>
                       </div>
 
-                      <h3 className="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-[1.15]">
+                      <h3 className="text-2xl sm:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight leading-[1.15]">
                         Turning ideas into{' '}
-                        <span className="text-white/40">scalable products.</span>
+                        <span className="text-zinc-400 dark:text-white/40">scalable products.</span>
                       </h3>
 
-                      <div className="mt-5 space-y-3.5 text-sm sm:text-base leading-relaxed text-white/65 font-normal">
+                      <div className="mt-5 space-y-3.5 text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-white/65 font-normal">
                         <p>
-                          Hello! I&apos;m <strong className="font-semibold text-white">Sazzad Shuvo</strong> (Md. Sazzad Hossen Shuvo),
-                          a passionate <strong className="text-white">MERN Stack Developer</strong> with hands-on expertise building responsive, high-performance web applications, eCommerce stores, and CMS websites with clean, maintainable architecture.
+                          Hello! I&apos;m <strong className="font-semibold text-zinc-900 dark:text-white">Sazzad Shuvo</strong> (Md. Sazzad Hossen Shuvo),
+                          a passionate <strong className="text-zinc-900 dark:text-white">MERN Stack Developer</strong> with hands-on expertise building responsive, high-performance web applications, eCommerce stores, and CMS websites with clean, maintainable architecture.
                         </p>
                         <p>
-                          Having deep hands-on expertise in <strong className="text-white">React.js, Next.js, JavaScript, TypeScript, Node.js, Express.js</strong>, and{' '}
-                          <strong className="text-white">MongoDB</strong>, I specialize in architecting intuitive user interfaces, REST APIs, reusable components, and high-converting platforms.
+                          Having deep hands-on expertise in <strong className="text-zinc-900 dark:text-white">React.js, Next.js, JavaScript, TypeScript, Node.js, Express.js</strong>, and{' '}
+                          <strong className="text-zinc-900 dark:text-white">MongoDB</strong>, I specialize in architecting intuitive user interfaces, REST APIs, reusable components, and high-converting platforms.
                         </p>
                         <p>
-                          In addition to custom full-stack software, I develop CMS ecosystems across <strong className="text-white">WordPress, Shopify, Wix, Squarespace, and Framer</strong>.
+                          In addition to custom full-stack software, I develop CMS ecosystems across <strong className="text-zinc-900 dark:text-white">WordPress, Shopify, Wix, Squarespace, and Framer</strong>.
                         </p>
                       </div>
                     </div>
@@ -182,43 +177,43 @@ export default function AboutMe() {
                     <div className="mt-7 grid gap-3 sm:grid-cols-2">
                       <div
                         onClick={() => handleCopy(siteConfig.email, 'email')}
-                        className="group/mail flex cursor-pointer items-center justify-between rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 transition hover:border-white/20 hover:bg-white/[0.05]"
+                        className="group/mail flex cursor-pointer items-center justify-between rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-3.5 transition hover:border-black/20 hover:bg-black/[0.04] dark:hover:border-white/20 dark:hover:bg-white/[0.05]"
                         title="Click to copy email"
                       >
                         <div className="flex items-center gap-2.5">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.05] text-[#f59e0b]">
+                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-black/[0.04] dark:bg-white/[0.05] text-[#f59e0b]">
                             <Mail className="h-4 w-4" />
                           </div>
                           <div className="overflow-hidden">
-                            <div className="text-[10px] font-mono uppercase text-white/40">Email Address</div>
-                            <div className="text-xs font-bold font-mono text-white/90 truncate">
+                            <div className="text-[10px] font-mono uppercase text-zinc-500 dark:text-white/40">Email Address</div>
+                            <div className="text-xs font-bold font-mono text-zinc-900 dark:text-white/90 truncate">
                               {siteConfig.email}
                             </div>
                           </div>
                         </div>
-                        <span className="text-xs text-white/40 group-hover/mail:text-white">
-                          {copiedField === 'email' ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
+                        <span className="text-xs text-zinc-400 group-hover/mail:text-zinc-900 dark:text-white/40 dark:group-hover/mail:text-white">
+                          {copiedField === 'email' ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
                         </span>
                       </div>
 
                       <div
                         onClick={() => handleCopy(siteConfig.phone, 'phone')}
-                        className="group/phone flex cursor-pointer items-center justify-between rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 transition hover:border-white/20 hover:bg-white/[0.05]"
+                        className="group/phone flex cursor-pointer items-center justify-between rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-3.5 transition hover:border-black/20 hover:bg-black/[0.04] dark:hover:border-white/20 dark:hover:bg-white/[0.05]"
                         title="Click to copy phone"
                       >
                         <div className="flex items-center gap-2.5">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.05] text-emerald-400">
+                          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-black/[0.04] dark:bg-white/[0.05] text-emerald-500">
                             <Phone className="h-4 w-4" />
                           </div>
                           <div>
-                            <div className="text-[10px] font-mono uppercase text-white/40">Phone / WhatsApp</div>
-                            <div className="text-xs font-bold font-mono text-white/90">
+                            <div className="text-[10px] font-mono uppercase text-zinc-500 dark:text-white/40">Phone / WhatsApp</div>
+                            <div className="text-xs font-bold font-mono text-zinc-900 dark:text-white/90">
                               {siteConfig.phone}
                             </div>
                           </div>
                         </div>
-                        <span className="text-xs text-white/40 group-hover/phone:text-emerald-400">
-                          {copiedField === 'phone' ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
+                        <span className="text-xs text-zinc-400 group-hover/phone:text-emerald-500 dark:text-white/40 dark:group-hover/phone:text-emerald-400">
+                          {copiedField === 'phone' ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
                         </span>
                       </div>
                     </div>
@@ -227,49 +222,49 @@ export default function AboutMe() {
                   {/* Right Column: Live Status, Metrics Matrix & Resume Hub */}
                   <div className="flex flex-col justify-between space-y-4 lg:col-span-5">
                     {/* Live Status Card */}
-                    <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.03] p-4 backdrop-blur-xl">
+                    <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.05] dark:bg-emerald-500/[0.03] p-4 backdrop-blur-xl">
                       <div className="flex items-center gap-2.5">
                         <span className="relative flex h-2.5 w-2.5">
                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                           <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
                         </span>
-                        <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                        <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                           Active Status
                         </span>
                       </div>
-                      <p className="mt-2 text-xs sm:text-sm font-semibold text-white">
+                      <p className="mt-2 text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white">
                         Web Developer at SoftvenceAgency
                       </p>
-                      <p className="text-xs text-white/40 mt-0.5">
+                      <p className="text-xs text-zinc-500 dark:text-white/40 mt-0.5">
                         Based in Mohakhali, Wireless Gate, Dhaka, Bangladesh
                       </p>
                     </div>
 
-                    {/* Metrics Matrix (Clean obsidian boxes) */}
+                    {/* Metrics Matrix (Clean glass boxes) */}
                     <div className="grid grid-cols-3 gap-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 text-center">
-                        <div className="text-2xl font-black text-white">2+</div>
-                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/40">Years Exp</div>
+                      <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-3.5 text-center">
+                        <div className="text-2xl font-black text-zinc-900 dark:text-white">2+</div>
+                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-white/40">Years Exp</div>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 text-center">
-                        <div className="text-2xl font-black text-white">15+</div>
-                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/40">Projects</div>
+                      <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-3.5 text-center">
+                        <div className="text-2xl font-black text-zinc-900 dark:text-white">15+</div>
+                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-white/40">Projects</div>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 text-center">
-                        <div className="text-2xl font-black text-white">100%</div>
-                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/40">Commitment</div>
+                      <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-3.5 text-center">
+                        <div className="text-2xl font-black text-zinc-900 dark:text-white">100%</div>
+                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-white/40">Commitment</div>
                       </div>
                     </div>
 
-                    {/* Official Resume Hub (Clean monochrome style) */}
-                    <div className="rounded-2xl border border-white/10 bg-black/60 p-5 text-white">
+                    {/* Official Resume Hub (Clean glass style) */}
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-black/60 p-5">
                       <div className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#f59e0b] mb-1">
                         Official Resume Document
                       </div>
-                      <h4 className="text-sm font-bold text-white">
+                      <h4 className="text-sm font-bold text-zinc-900 dark:text-white">
                         Sazzad Shuvo — MERN Stack Developer
                       </h4>
-                      <p className="mt-1 text-xs text-white/50">
+                      <p className="mt-1 text-xs text-zinc-600 dark:text-white/50">
                         Download complete CV with project links, skills, and certification.
                       </p>
                       <div className="mt-4 flex flex-wrap items-center gap-2.5">
@@ -278,14 +273,14 @@ export default function AboutMe() {
                           target="_blank"
                           rel="noopener noreferrer"
                           download="Sazzad-Shuvo-CV.pdf"
-                          className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-white/20 hover:border-white/30"
+                          className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-zinc-900 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
                         >
                           <FileText className="h-3.5 w-3.5" />
                           <span>Download CV</span>
                         </a>
                         <a
                           href="#contact"
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-semibold text-white/60 hover:text-white hover:bg-white/[0.06] transition"
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-black/[0.04] px-4 py-2 text-xs font-semibold text-zinc-700 hover:text-black hover:bg-black/[0.08] dark:border-white/10 dark:bg-white/[0.03] dark:text-white/60 dark:hover:text-white dark:hover:bg-white/[0.06] transition"
                         >
                           <span>Let&apos;s Talk</span>
                           <ArrowRight className="h-3.5 w-3.5" />
@@ -300,50 +295,45 @@ export default function AboutMe() {
 
             {/* CARD 2: TECHNICAL ARSENAL */}
             <div
-              className="project-stack-card group transition-all duration-300"
+              className="project-stack-card group transition-all duration-300 rounded-[32px] overflow-hidden border border-black/10 bg-white/75 shadow-xl shadow-black/5 backdrop-blur-2xl dark:border-white/10 dark:bg-[#09090b]/95 dark:shadow-[0_30px_70px_rgba(0,0,0,0.5)]"
               style={{
                 position: 'sticky',
                 top: '115px',
                 width: '100%',
                 marginBottom: '70px',
-                borderRadius: '32px',
-                overflow: 'hidden',
-                background: '#09090b',
-                boxShadow: '0 30px 70px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255,255,255,0.08)'
               }}
             >
               <div className="relative w-full p-6 sm:p-9 lg:p-10 box-border overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
                   alt="Arsenal"
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-15"
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-5 dark:opacity-15"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/95 to-[#09090b]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/60 to-white/30 dark:from-[#09090b] dark:via-[#09090b]/95 dark:to-[#09090b]/80 pointer-events-none" />
 
                 {/* Header */}
                 <div className="relative z-10 flex items-center justify-between gap-4 flex-wrap mb-6">
-                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase">
+                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase dark:border-white/10 dark:bg-white/[0.03]">
                     02. TECHNICAL ARSENAL
                   </span>
-                  <span className="px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-white/40 font-mono text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full border border-black/10 bg-black/[0.03] text-zinc-500 font-mono text-xs font-semibold dark:border-white/10 dark:bg-white/[0.03] dark:text-white/40">
                     02/04
                   </span>
                 </div>
 
                 <div className="relative z-10">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-white/10 pb-4 mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-black/10 dark:border-white/10 pb-4 mb-6">
                     <div>
                       {/* Image 2 style tag */}
                       <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b] mb-1">
                         <Sparkles className="h-3.5 w-3.5 text-[#f59e0b]" />
                         <span>SKILL CATEGORIZATION // ATS OPTIMIZED</span>
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
                         Technical Stack &amp; Tools
                       </h3>
                     </div>
-                    <span className="text-xs font-mono text-white/40">
+                    <span className="text-xs font-mono text-zinc-500 dark:text-white/40">
                       Full-Stack MERN + CMS Mastery
                     </span>
                   </div>
@@ -351,19 +341,19 @@ export default function AboutMe() {
                   {/* 4 Skill Categories Grid */}
                   <div className="grid gap-4 sm:grid-cols-2">
                     {/* 1. Frontend */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#f59e0b]">
                           <Code2 className="h-4 w-4 text-[#f59e0b]" />
                           <span>Frontend Engineering</span>
                         </div>
-                        <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[10px] font-mono text-white/60">
+                        <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2 py-0.5 text-[10px] font-mono text-zinc-600 dark:text-white/60">
                           React 19 &bull; Next.js
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {['HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 'React.js', 'Next.js', 'Redux Toolkit', 'Tailwind CSS', 'Shadcn/UI', 'Framer Motion'].map((item) => (
-                          <span key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/80">
+                          <span key={item} className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
                             {item}
                           </span>
                         ))}
@@ -371,19 +361,19 @@ export default function AboutMe() {
                     </div>
 
                     {/* 2. Backend */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#f59e0b]">
                           <Layers className="h-4 w-4 text-[#f59e0b]" />
                           <span>Backend &amp; Databases</span>
                         </div>
-                        <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[10px] font-mono text-white/60">
+                        <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2 py-0.5 text-[10px] font-mono text-zinc-600 dark:text-white/60">
                           Node &bull; Express &bull; Mongo
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {['Node.js', 'Express.js', 'MongoDB', 'Next.js API Routes', 'REST APIs', 'JWT Authentication', 'Bcrypt.js'].map((item) => (
-                          <span key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/80">
+                          <span key={item} className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
                             {item}
                           </span>
                         ))}
@@ -391,19 +381,19 @@ export default function AboutMe() {
                     </div>
 
                     {/* 3. CMS & eCommerce */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#f59e0b]">
                           <Globe className="h-4 w-4 text-[#f59e0b]" />
                           <span>CMS &amp; eCommerce Systems</span>
                         </div>
-                        <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[10px] font-mono text-white/60">
+                        <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2 py-0.5 text-[10px] font-mono text-zinc-600 dark:text-white/60">
                           WordPress &bull; Shopify &bull; Wix
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {['WordPress', 'Shopify', 'Wix', 'Squarespace', 'Framer', 'CMS Development', 'Theme Customization', 'eCommerce Development'].map((item) => (
-                          <span key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/80">
+                          <span key={item} className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
                             {item}
                           </span>
                         ))}
@@ -411,19 +401,19 @@ export default function AboutMe() {
                     </div>
 
                     {/* 4. Tools & DevOps */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#f59e0b]">
                           <Zap className="h-4 w-4 text-[#f59e0b]" />
                           <span>Tools, Optimization &amp; DevOps</span>
                         </div>
-                        <span className="rounded-full bg-white/5 border border-white/10 px-2 py-0.5 text-[10px] font-mono text-white/60">
+                        <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2 py-0.5 text-[10px] font-mono text-zinc-600 dark:text-white/60">
                           Git &bull; Performance &bull; SEO
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {['Git', 'GitHub', 'NPM', 'Responsive Web Design', 'API Integration', 'Performance Optimization', 'SEO Optimization'].map((item) => (
-                          <span key={item} className="rounded-xl border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/80">
+                          <span key={item} className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
                             {item}
                           </span>
                         ))}
@@ -436,7 +426,7 @@ export default function AboutMe() {
                       href="/shuvos-cv.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-white/20 hover:border-white/30"
+                      className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-zinc-900 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
                     >
                       <span>Download Technical CV</span>
                       <ArrowRight className="h-3.5 w-3.5" />
@@ -449,86 +439,81 @@ export default function AboutMe() {
 
             {/* CARD 3: CAREER TRACK */}
             <div
-              className="project-stack-card group transition-all duration-300"
+              className="project-stack-card group transition-all duration-300 rounded-[32px] overflow-hidden border border-black/10 bg-white/75 shadow-xl shadow-black/5 backdrop-blur-2xl dark:border-white/10 dark:bg-[#09090b]/95 dark:shadow-[0_30px_70px_rgba(0,0,0,0.5)]"
               style={{
                 position: 'sticky',
                 top: '140px',
                 width: '100%',
                 marginBottom: '70px',
-                borderRadius: '32px',
-                overflow: 'hidden',
-                background: '#09090b',
-                boxShadow: '0 30px 70px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255,255,255,0.08)'
               }}
             >
               <div className="relative w-full p-6 sm:p-9 lg:p-10 box-border overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200"
                   alt="Career"
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-15"
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-5 dark:opacity-15"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/95 to-[#09090b]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/60 to-white/30 dark:from-[#09090b] dark:via-[#09090b]/95 dark:to-[#09090b]/80 pointer-events-none" />
 
                 {/* Header */}
                 <div className="relative z-10 flex items-center justify-between gap-4 flex-wrap mb-6">
-                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase">
+                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase dark:border-white/10 dark:bg-white/[0.03]">
                     03. CAREER TRACK
                   </span>
-                  <span className="px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-white/40 font-mono text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full border border-black/10 bg-black/[0.03] text-zinc-500 font-mono text-xs font-semibold dark:border-white/10 dark:bg-white/[0.03] dark:text-white/40">
                     03/04
                   </span>
                 </div>
 
                 <div className="relative z-10">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-white/10 pb-4 mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-black/10 dark:border-white/10 pb-4 mb-6">
                     <div>
                       {/* Image 2 style tag */}
                       <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b] mb-1">
                         <Sparkles className="h-3.5 w-3.5 text-[#f59e0b]" />
                         <span>PROFESSIONAL FOOTPRINT RECORD</span>
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
                         Industry Experience
                       </h3>
                     </div>
-                    <span className="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-mono text-white/60 self-start sm:self-auto">
+                    <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-3 py-1 text-xs font-mono text-zinc-600 dark:text-white/60 self-start sm:self-auto">
                       2025 – Present
                     </span>
                   </div>
 
                   {/* SoftvenceAgency Main Showcase */}
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+                  <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-6">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div>
-                        <h4 className="text-xl font-bold text-white">
+                        <h4 className="text-xl font-bold text-zinc-900 dark:text-white">
                           Web Developer
                         </h4>
-                        <p className="text-sm font-semibold text-white/60 font-mono mt-0.5">
+                        <p className="text-sm font-semibold text-zinc-600 dark:text-white/60 font-mono mt-0.5">
                           SoftvenceAgency
                         </p>
                       </div>
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.04] px-3 py-1 text-xs font-mono text-emerald-400 self-start sm:self-auto">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.05] dark:bg-emerald-500/[0.04] px-3 py-1 text-xs font-mono text-emerald-600 dark:text-emerald-400 self-start sm:self-auto">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         Full-time &bull; 2025 - Present
                       </span>
                     </div>
 
-                    <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/65 font-normal">
+                    <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-white/65 font-normal">
                       Work on modern websites, web applications, eCommerce stores, and CMS-based projects, focusing on responsive development, clean UI implementation, performance optimization, and scalable digital solutions.
                     </p>
 
-                    <div className="mt-5 space-y-2.5 border-t border-white/10 pt-4">
-                      <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div className="mt-5 space-y-2.5 border-t border-black/10 dark:border-white/10 pt-4">
+                      <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-800 dark:text-white/80">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
                         <span>Architecting responsive, conversion-focused web applications with React 19, Next.js, and TypeScript</span>
                       </div>
-                      <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-800 dark:text-white/80">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
                         <span>Crafting custom CMS themes and headless eCommerce solutions on WordPress, Shopify, Wix, and Framer</span>
                       </div>
-                      <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-800 dark:text-white/80">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
                         <span>Ensuring high performance, fluid animations with Framer Motion, and robust SEO optimization</span>
                       </div>
                     </div>
@@ -536,7 +521,7 @@ export default function AboutMe() {
                     {/* Tech Chips */}
                     <div className="mt-5 flex flex-wrap gap-2 pt-2">
                       {['Next.js', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'WordPress', 'Shopify', 'Wix', 'Framer', 'Tailwind CSS'].map((tech) => (
-                        <span key={tech} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-mono font-medium text-white/70">
+                        <span key={tech} className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-3 py-1 text-xs font-mono font-medium text-zinc-700 dark:text-white/70">
                           {tech}
                         </span>
                       ))}
@@ -546,7 +531,7 @@ export default function AboutMe() {
                   <div className="mt-6 flex justify-end gap-3">
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-white/20 hover:border-white/30"
+                      className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-zinc-900 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
                     >
                       <span>Let&apos;s Work Together</span>
                       <ArrowRight className="h-3.5 w-3.5" />
@@ -559,122 +544,117 @@ export default function AboutMe() {
 
             {/* CARD 4: EDUCATION & CERTS */}
             <div
-              className="project-stack-card group transition-all duration-300"
+              className="project-stack-card group transition-all duration-300 rounded-[32px] overflow-hidden border border-black/10 bg-white/75 shadow-xl shadow-black/5 backdrop-blur-2xl dark:border-white/10 dark:bg-[#09090b]/95 dark:shadow-[0_30px_70px_rgba(0,0,0,0.5)]"
               style={{
                 position: 'sticky',
                 top: '165px',
                 width: '100%',
                 marginBottom: '40px',
-                borderRadius: '32px',
-                overflow: 'hidden',
-                background: '#09090b',
-                boxShadow: '0 30px 70px rgba(0,0,0,0.5)',
-                border: '1px solid rgba(255,255,255,0.08)'
               }}
             >
               <div className="relative w-full p-6 sm:p-9 lg:p-10 box-border overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200"
                   alt="Education"
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-15"
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-5 dark:opacity-15"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/95 to-[#09090b]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/60 to-white/30 dark:from-[#09090b] dark:via-[#09090b]/95 dark:to-[#09090b]/80 pointer-events-none" />
 
                 {/* Header */}
                 <div className="relative z-10 flex items-center justify-between gap-4 flex-wrap mb-6">
-                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase">
+                  <span className="inline-block px-3.5 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-[#f59e0b] font-mono text-[11px] font-bold tracking-[1.5px] uppercase dark:border-white/10 dark:bg-white/[0.03]">
                     04. EDUCATION &amp; CERTS
                   </span>
-                  <span className="px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-white/40 font-mono text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full border border-black/10 bg-black/[0.03] text-zinc-500 font-mono text-xs font-semibold dark:border-white/10 dark:bg-white/[0.03] dark:text-white/40">
                     04/04
                   </span>
                 </div>
 
                 <div className="relative z-10">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-white/10 pb-4 mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-black/10 dark:border-white/10 pb-4 mb-6">
                     <div>
                       {/* Image 2 style tag */}
                       <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b] mb-1">
                         <Sparkles className="h-3.5 w-3.5 text-[#f59e0b]" />
                         <span>ACADEMIC FOUNDATION &amp; CREDENTIALS</span>
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
                         Education &amp; Certification
                       </h3>
                     </div>
-                    <span className="text-xs font-mono text-white/40">
+                    <span className="text-xs font-mono text-zinc-500 dark:text-white/40">
                       Uttara University &bull; Bdcalling
                     </span>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     {/* Degree 1 */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-[10px] font-mono text-white/60">
+                        <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2.5 py-0.5 text-[10px] font-mono text-zinc-600 dark:text-white/60">
                           2025 – Present
                         </span>
                         <GraduationCap className="h-4 w-4 text-[#f59e0b]" />
                       </div>
-                      <h4 className="text-base font-bold text-white">
+                      <h4 className="text-base font-bold text-zinc-900 dark:text-white">
                         B.Sc. in Computer Science &amp; Engineering (CSE)
                       </h4>
-                      <p className="text-xs font-medium text-white/60 mt-0.5">
+                      <p className="text-xs font-medium text-zinc-600 dark:text-white/60 mt-0.5">
                         Ongoing — Uttara University
                       </p>
-                      <p className="text-xs text-white/40 mt-2">
+                      <p className="text-xs text-zinc-500 dark:text-white/40 mt-2">
                         Uttara, Dhaka 1230, Bangladesh
                       </p>
                     </div>
 
                     {/* Degree 2 */}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                    <div className="rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-[10px] font-mono text-white/60">
+                        <span className="rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2.5 py-0.5 text-[10px] font-mono text-zinc-600 dark:text-white/60">
                           2020 – 2024
                         </span>
-                        <Award className="h-4 w-4 text-white/50" />
+                        <Award className="h-4 w-4 text-zinc-400 dark:text-white/50" />
                       </div>
-                      <h4 className="text-base font-bold text-white">
+                      <h4 className="text-base font-bold text-zinc-900 dark:text-white">
                         Diploma in Computer Technology
                       </h4>
-                      <p className="text-xs font-medium text-white/60 mt-0.5">
+                      <p className="text-xs font-medium text-zinc-600 dark:text-white/60 mt-0.5">
                         Completed — Thakurgaon Polytechnic Institute
                       </p>
-                      <p className="text-xs text-white/40 mt-2">
+                      <p className="text-xs text-zinc-500 dark:text-white/40 mt-2">
                         Thakurgaon, Bangladesh
                       </p>
                     </div>
                   </div>
 
                   {/* Professional Certification Card */}
-                  <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
+                  <div className="mt-4 rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
                     <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#f59e0b] mb-1">
                       <Award className="h-4 w-4 text-[#f59e0b]" />
                       <span>Professional Certification</span>
                     </div>
-                    <h4 className="text-base font-bold text-white">
+                    <h4 className="text-base font-bold text-zinc-900 dark:text-white">
                       Mastering MERN Stack Web Development
                     </h4>
-                    <p className="text-xs text-white/60 mt-1">
-                      <strong className="text-white">Bdcalling Academy</strong> &bull; Dec 2025
+                    <p className="text-xs text-zinc-600 dark:text-white/60 mt-1">
+                      <strong className="text-zinc-900 dark:text-white">Bdcalling Academy</strong> &bull; Dec 2025
                     </p>
                   </div>
 
                   {/* Languages Box */}
-                  <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4.5">
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-white/40 mb-2">
+                  <div className="mt-4 rounded-2xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-4.5">
+                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-500 dark:text-white/40 mb-2">
                       Language Proficiency
                     </div>
                     <div className="flex flex-wrap gap-2.5">
-                      <span className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/80">
-                        🇧🇩 Bangla: <span className="text-emerald-400 font-normal">Native / Fluent</span>
+                      <span className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
+                        🇧🇩 Bangla: <span className="text-emerald-500 font-normal">Native / Fluent</span>
                       </span>
-                      <span className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/80">
-                        🇬🇧 English: <span className="text-white/60 font-normal">Professional / Fluent</span>
+                      <span className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
+                        🇬🇧 English: <span className="text-zinc-600 dark:text-white/60 font-normal">Professional / Fluent</span>
                       </span>
-                      <span className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-white/80">
-                        🇮🇳 Hindi: <span className="text-white/40 font-normal">Basic</span>
+                      <span className="rounded-xl border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-800 dark:text-white/80">
+                        🇮🇳 Hindi: <span className="text-zinc-500 dark:text-white/40 font-normal">Basic</span>
                       </span>
                     </div>
                   </div>
@@ -684,7 +664,7 @@ export default function AboutMe() {
                       href="/shuvos-cv.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-white/20 hover:border-white/30"
+                      className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-zinc-900 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
                     >
                       <FileText className="h-3.5 w-3.5" />
                       <span>Download Certified Resume</span>
