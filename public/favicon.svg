@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#c7d2fe"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect x="24" y="24" width="464" height="464" rx="120" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="20"/>
+
+  <!-- Glowing subtle inner pulse -->
+  <circle cx="256" cy="256" r="160" fill="url(#accentGrad)" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Left Code Bracket Accent < -->
+  <path d="M 120 180 L 76 256 L 120 332" fill="none" stroke="#6366f1" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Right Code Bracket Accent > -->
+  <path d="M 392 180 L 436 256 L 392 332" fill="none" stroke="#06b6d4" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Bold Modern S Monogram -->
+  <text x="256" y="340" 
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" 
+        font-weight="900" 
+        font-size="250" 
+        fill="url(#textGrad)" 
+        text-anchor="middle"
+        letter-spacing="-0.05em">S</text>
+
+  <!-- Glowing Accent Dot (Cyan) -->
+  <circle cx="340" cy="335" r="18" fill="#38bdf8" filter="url(#glow)"/>
+  <circle cx="340" cy="335" r="12" fill="#ffffff"/>
+</svg>

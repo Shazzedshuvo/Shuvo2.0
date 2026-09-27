@@ -164,8 +164,8 @@ export default function ProjectGallery() {
         {/* Header */}
         <div className="mb-8 sm:mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-400 mb-3">
-              <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03] px-3.5 py-1 text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b] mb-3">
+              <span className="h-2 w-2 rounded-full bg-[#f59e0b] animate-pulse" />
               Interactive Gallery Carousel
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-5xl dark:text-white">
@@ -180,11 +180,11 @@ export default function ProjectGallery() {
             <button
               type="button"
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-200 border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.04] px-3.5 py-1.5 text-xs font-medium text-zinc-700 dark:text-white/70 transition-all duration-200 cursor-pointer"
             >
               <span className="relative flex h-2 w-2">
-                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75 ${isAutoPlaying ? '' : 'hidden'}`} />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
+                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 ${isAutoPlaying ? '' : 'hidden'}`} />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span>{isAutoPlaying ? 'Auto Playing' : 'Paused'}</span>
             </button>
@@ -246,7 +246,7 @@ export default function ProjectGallery() {
                     {item.category}
                   </p>
                 </div>
-                <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                <span className="text-xs font-semibold text-[#f59e0b]">
                   Explore →
                 </span>
               </div>

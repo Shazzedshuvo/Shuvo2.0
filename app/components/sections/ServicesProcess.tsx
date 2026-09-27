@@ -58,8 +58,8 @@ export default function ServicesProcess() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
           <div className="mb-12 sm:mb-16">
-            <p className="mb-3 sm:mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-zinc-500 dark:text-white/30">
-              What I Do
+            <p className="mb-3 sm:mb-5 text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b]">
+              WHAT I DO
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-5xl dark:text-white">
               Services built around <span className="text-zinc-400 dark:text-white/35">your goals.</span>
@@ -91,8 +91,8 @@ export default function ServicesProcess() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28 gsap-fade-up">
         <div className="grid gap-10 sm:gap-16 lg:grid-cols-[.7fr_1.3fr]">
           <div>
-            <p className="mb-3 sm:mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-zinc-500 dark:text-white/30">
-              My Process
+            <p className="mb-3 sm:mb-5 text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b]">
+              MY PROCESS
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-5xl dark:text-white">
               Simple.<br />

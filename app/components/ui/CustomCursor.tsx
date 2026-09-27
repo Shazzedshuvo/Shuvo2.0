@@ -83,7 +83,7 @@ export default function CustomCursor() {
     <>
       <div
         ref={cursorRef}
-        className="pointer-events-none fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-[99999] h-2 w-2 rounded-full bg-indigo-500 hidden md:block"
+        className="pointer-events-none fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-[99999] h-2 w-2 rounded-full bg-[#f59e0b] hidden md:block"
       />
       <div
         ref={followerRef}

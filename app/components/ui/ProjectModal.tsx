@@ -60,11 +60,11 @@ export default function ProjectModal({
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Modal Container */}
-      <div className="relative z-10 w-full max-w-4xl max-h-[92vh] overflow-y-auto glass-card rounded-3xl border border-[#00bf8f]/40 p-6 sm:p-8 bg-[#05080c]/95 shadow-[0_25px_80px_rgba(0,0,0,0.8)]">
+      <div className="relative z-10 w-full max-w-4xl max-h-[92vh] overflow-y-auto glass-card rounded-3xl border border-black/10 dark:border-white/10 p-6 sm:p-8 bg-[#f8fafc]/95 dark:bg-[#0d0d0f]/95 shadow-[0_25px_80px_rgba(0,0,0,0.8)]">
         {/* Header Controls */}
         <div className="flex items-center justify-between pb-4 border-b border-[var(--border)]">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#00bf8f]/10 text-[#00bf8f] border border-[#00bf8f]/20">
+            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-[0.2em] bg-[#f59e0b]/10 text-[#f59e0b] border border-[#f59e0b]/20">
               {project.category}
             </span>
             {project.year && (
@@ -80,7 +80,7 @@ export default function ProjectModal({
               type="button"
               onClick={() => navigate(-1)}
               aria-label="Previous project"
-              className="p-2 rounded-full glass-panel hover:text-[#00bf8f] transition-colors cursor-pointer text-[var(--foreground)]"
+              className="p-2 rounded-full glass-panel hover:text-[#f59e0b] transition-colors cursor-pointer text-[var(--foreground)]"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
@@ -88,7 +88,7 @@ export default function ProjectModal({
               type="button"
               onClick={() => navigate(1)}
               aria-label="Next project"
-              className="p-2 rounded-full glass-panel hover:text-[#00bf8f] transition-colors cursor-pointer text-[var(--foreground)]"
+              className="p-2 rounded-full glass-panel hover:text-[#f59e0b] transition-colors cursor-pointer text-[var(--foreground)]"
             >
               <ArrowRight className="h-4 w-4" />
             </button>
@@ -110,7 +110,7 @@ export default function ProjectModal({
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#05080c] via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0f] via-transparent to-transparent opacity-80" />
 
           {/* Quick Floating Actions */}
           <div className="absolute bottom-4 right-4 flex items-center gap-3">
@@ -119,7 +119,7 @@ export default function ProjectModal({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#00bf8f] text-[#03100c] text-xs font-bold hover:bg-[#13d9a7] transition-all shadow-lg"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b] hover:bg-[#d97706] text-black text-xs font-bold transition-all shadow-lg"
               >
                 <ExternalLink className="h-3.5 w-3.5" /> Live Preview
               </a>
@@ -129,7 +129,7 @@ export default function ProjectModal({
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs font-semibold hover:text-[#00bf8f] transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs font-semibold hover:text-[#f59e0b] transition-all"
               >
                 <FaGithub className="h-3.5 w-3.5" /> GitHub Repo
               </a>
@@ -143,7 +143,7 @@ export default function ProjectModal({
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--foreground)]">
               {project.title}
             </h2>
-            <p className="text-sm font-semibold text-[#00bf8f] mt-1">
+            <p className="text-sm font-semibold text-[#f59e0b] mt-1">
               {project.tagline}
             </p>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-[var(--muted)]">
@@ -160,7 +160,7 @@ export default function ProjectModal({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {project.features.map((feat, i) => (
                   <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl glass-panel text-xs text-[var(--muted)]">
-                    <CheckCircle2 className="h-4 w-4 text-[#00bf8f] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-4 w-4 text-[#f59e0b] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -177,7 +177,7 @@ export default function ProjectModal({
               {project.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 rounded-full text-xs font-medium glass-panel border border-[#00bf8f]/20 text-[var(--foreground)]"
+                  className="px-3 py-1 rounded-full text-xs font-medium glass-panel border border-black/10 dark:border-white/10 hover:border-[#f59e0b]/30 text-[var(--foreground)]"
                 >
                   {tag}
                 </span>

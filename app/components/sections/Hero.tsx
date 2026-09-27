@@ -111,7 +111,7 @@ export default function Hero() {
   };
 
   return (
-    <section ref={heroRef} id="hero" className="relative overflow-hidden pt-20 scroll-mt-20">
+    <section ref={heroRef} id="hero" className="relative overflow-hidden pt-24 sm:pt-28 scroll-mt-20">
       {/* Ambient background light circle (exact match to Arafat) */}
       <div className="absolute left-1/2 top-20 -z-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/[0.04] dark:bg-white/[0.04] blur-3xl pointer-events-none" />
 

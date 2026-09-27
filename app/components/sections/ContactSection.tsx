@@ -58,7 +58,7 @@ export default function ContactSection() {
     <section id="contact" className="relative py-20 transition-colors duration-300 scroll-mt-20 overflow-hidden gsap-fade-up">
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[950px] rounded-full bg-gradient-to-tr from-indigo-500/15 via-purple-500/10 to-pink-500/15 blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[950px] rounded-full bg-gradient-to-tr from-[#f59e0b]/10 via-amber-500/5 to-transparent blur-[140px]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -70,7 +70,7 @@ export default function ContactSection() {
               fill="none"
               stroke="currentColor"
               strokeWidth="1"
-              className="absolute h-full w-full text-indigo-500/60 animate-spin"
+              className="absolute h-full w-full text-zinc-300 dark:text-white/20 animate-spin"
               style={{ animationDuration: '24s' }}
             >
               <ellipse cx="50" cy="50" rx="46" ry="18" strokeDasharray="6 4" transform="rotate(35 50 50)" />
@@ -83,7 +83,7 @@ export default function ContactSection() {
             {/* Left Info Column */}
             <div className="flex flex-col justify-between">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-400">
+                <p className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b]">
                   LET&apos;S CONNECT
                 </p>
                 <h2 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
@@ -162,7 +162,7 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your Name"
-                        className="w-full rounded-xl border border-black/10 bg-white/90 px-4 py-3 text-xs font-medium text-zinc-900 placeholder:text-zinc-400 backdrop-blur-md transition-colors focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-indigo-400 dark:focus:bg-[#18181b] dark:focus:ring-indigo-400/20"
+                        className="w-full rounded-xl border border-black/10 bg-white/90 px-4 py-3 text-xs font-medium text-zinc-900 placeholder:text-zinc-400 backdrop-blur-md transition-colors focus:border-[#f59e0b] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b]/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-[#f59e0b] dark:focus:bg-[#18181b] dark:focus:ring-[#f59e0b]/20"
                       />
                     </div>
                     <div>
@@ -173,7 +173,7 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Your Email"
-                        className="w-full rounded-xl border border-black/10 bg-white/90 px-4 py-3 text-xs font-medium text-zinc-900 placeholder:text-zinc-400 backdrop-blur-md transition-colors focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-indigo-400 dark:focus:bg-[#18181b] dark:focus:ring-indigo-400/20"
+                        className="w-full rounded-xl border border-black/10 bg-white/90 px-4 py-3 text-xs font-medium text-zinc-900 placeholder:text-zinc-400 backdrop-blur-md transition-colors focus:border-[#f59e0b] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b]/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-[#f59e0b] dark:focus:bg-[#18181b] dark:focus:ring-[#f59e0b]/20"
                       />
                     </div>
                   </div>
@@ -183,7 +183,7 @@ export default function ContactSection() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full appearance-none rounded-xl border border-black/10 bg-white/90 px-4 py-3 pr-10 text-xs font-medium text-zinc-900 backdrop-blur-md transition-colors cursor-pointer hover:bg-white focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:hover:bg-[#202025] dark:focus:border-indigo-400 dark:focus:bg-[#18181b] dark:focus:ring-indigo-400/20"
+                      className="w-full appearance-none rounded-xl border border-black/10 bg-white/90 px-4 py-3 pr-10 text-xs font-medium text-zinc-900 backdrop-blur-md transition-colors cursor-pointer hover:bg-white focus:border-[#f59e0b] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b]/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:hover:bg-[#202025] dark:focus:border-[#f59e0b] dark:focus:bg-[#18181b] dark:focus:ring-[#f59e0b]/20"
                     >
                       <option value="Full-Stack Web Application" className="bg-white text-zinc-900 dark:bg-[#18181b] dark:text-white py-1">
                         Full-Stack Web Application
@@ -214,7 +214,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Your Message"
-                      className="w-full resize-none rounded-xl border border-black/10 bg-white/90 px-4 py-3 text-xs font-medium text-zinc-900 placeholder:text-zinc-400 backdrop-blur-md transition-colors focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-indigo-400 dark:focus:bg-[#18181b] dark:focus:ring-indigo-400/20"
+                      className="w-full resize-none rounded-xl border border-black/10 bg-white/90 px-4 py-3 text-xs font-medium text-zinc-900 placeholder:text-zinc-400 backdrop-blur-md transition-colors focus:border-[#f59e0b] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f59e0b]/20 dark:border-white/10 dark:bg-[#18181b] dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-[#f59e0b] dark:focus:bg-[#18181b] dark:focus:ring-[#f59e0b]/20"
                     />
                   </div>
 

@@ -20,7 +20,7 @@ export default function Testimonials() {
           {/* Header */}
           <div className="mb-6 flex items-center justify-between gap-4">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-400">
+              <p className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b]">
                 TESTIMONIALS
               </p>
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
@@ -81,7 +81,7 @@ export default function Testimonials() {
                       {review.clientName}
                     </h4>
                     <p className="text-[10px] text-zinc-500 dark:text-white/40">
-                      {review.role}, <span className="text-indigo-600 dark:text-indigo-400 font-medium">{review.company}</span>
+                      {review.role}, <span className="text-[#f59e0b] font-medium">{review.company}</span>
                     </p>
                   </div>
                 </div>

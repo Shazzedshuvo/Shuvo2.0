@@ -24,6 +24,10 @@ export default function SelectedWork() {
           {/* Header */}
           <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
             <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03] px-3.5 py-1 text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b] mb-3">
+                <span className="h-2 w-2 rounded-full bg-[#f59e0b] animate-pulse" />
+                Featured Projects
+              </div>
               <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
                 Selected Work
               </h2>
@@ -68,7 +72,7 @@ export default function SelectedWork() {
                   <div className="mt-4">
                     <h3
                       onClick={() => handleOpen(project)}
-                      className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors cursor-pointer"
+                      className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-[#f59e0b] transition-colors cursor-pointer"
                     >
                       {project.title}
                     </h3>
@@ -122,12 +126,12 @@ export default function SelectedWork() {
 
           {/* Dedicated Portals Banner */}
           <div className="mt-14 grid gap-4 sm:grid-cols-2">
-            <div className="group relative overflow-hidden rounded-3xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent p-6 backdrop-blur-xl transition hover:border-amber-500/60 dark:border-white/10 dark:hover:border-amber-400/40">
+            <div className="group relative overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-6 backdrop-blur-xl transition hover:border-black/20 dark:hover:border-white/20">
               <div className="flex items-center justify-between">
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                <span className="rounded-full border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-[#f59e0b]">
                   Featured Portal
                 </span>
-                <span className="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+                <span className="flex h-2 w-2 rounded-full bg-[#f59e0b] animate-pulse" />
               </div>
               <h4 className="mt-3 text-lg font-bold text-zinc-900 dark:text-white">
                 Shuvo&apos;s Projects Catalog
@@ -138,7 +142,7 @@ export default function SelectedWork() {
               <div className="mt-4 flex items-center gap-3">
                 <a
                   href="/shuvos-projects"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-1.5 text-xs font-bold text-white shadow-md transition hover:scale-105"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-zinc-900 px-4 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/20"
                 >
                   <span>Open Page</span>
                   <ExternalLink className="h-3 w-3" />
@@ -147,19 +151,19 @@ export default function SelectedWork() {
                   href="https://shuvos-projects.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-mono text-amber-600 dark:text-amber-400 hover:underline"
+                  className="text-xs font-mono text-[#f59e0b] hover:underline"
                 >
                   shuvos-projects.vercel.app ↗
                 </a>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-transparent p-6 backdrop-blur-xl transition hover:border-indigo-500/60 dark:border-white/10 dark:hover:border-indigo-400/40">
+            <div className="group relative overflow-hidden rounded-3xl border border-black/10 bg-black/[0.02] dark:border-white/10 dark:bg-white/[0.02] p-6 backdrop-blur-xl transition hover:border-black/20 dark:hover:border-white/20">
               <div className="flex items-center justify-between">
-                <span className="rounded-full bg-indigo-500/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                <span className="rounded-full border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.03] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-[#f59e0b]">
                   Classic Archive
                 </span>
-                <span className="flex h-2 w-2 rounded-full bg-indigo-500" />
+                <span className="flex h-2 w-2 rounded-full bg-[#f59e0b]" />
               </div>
               <h4 className="mt-3 text-lg font-bold text-zinc-900 dark:text-white">
                 Portfolio 1.0 (Original Edition)
@@ -170,7 +174,7 @@ export default function SelectedWork() {
               <div className="mt-4 flex items-center gap-3">
                 <a
                   href="/portfolio-1"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-md transition hover:scale-105"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-zinc-900 px-4 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/20"
                 >
                   <span>Open Page</span>
                   <ExternalLink className="h-3 w-3" />
@@ -179,7 +183,7 @@ export default function SelectedWork() {
                   href="https://shazzedshuvo.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-mono text-indigo-600 dark:text-indigo-400 hover:underline"
+                  className="text-xs font-mono text-[#f59e0b] hover:underline"
                 >
                   shazzedshuvo.vercel.app ↗
                 </a>

@@ -83,7 +83,7 @@ export default function TechSkills() {
           {/* Section Header */}
           <div className="mb-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-indigo-600 dark:text-indigo-400">
+              <p className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#f59e0b]">
                 TOOLS &amp; SKILLS
               </p>
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-white">
@@ -136,7 +136,7 @@ export default function TechSkills() {
                   onClick={() => setSelectedCat(cat)}
                   className={`rounded-full px-3.5 py-1 text-xs font-semibold transition-all duration-200 cursor-pointer ${
                     selectedCat === cat
-                      ? 'bg-indigo-600 text-white shadow-sm dark:bg-indigo-500'
+                      ? 'border border-black/15 bg-zinc-900 text-white shadow-sm dark:border-white/20 dark:bg-white/15 dark:text-white'
                       : 'bg-black/5 text-zinc-600 hover:bg-black/10 dark:bg-white/5 dark:text-white/60 dark:hover:bg-white/10'
                   }`}
                 >
@@ -180,7 +180,7 @@ export default function TechSkills() {
             <button
               type="button"
               onClick={() => setExpanded(!expanded)}
-              className="text-xs font-semibold text-indigo-600 hover:underline dark:text-indigo-400 cursor-pointer"
+              className="text-xs font-semibold text-[#f59e0b] hover:underline cursor-pointer"
             >
               {expanded ? 'Collapse skills ↑' : `View all ${allSkillsList.length} skills ↓`}
             </button>

@@ -5,11 +5,10 @@ import { Download, Menu, X, Sun, Moon } from 'lucide-react';
 import { siteConfig } from '@/lib/data/siteConfig';
 
 const navItems = [
-  { name: 'About', href: '/#hero' },
+  { name: 'About', href: '/#about' },
   { name: 'Skills', href: '/#skills' },
   { name: 'Projects', href: '/#projects' },
   { name: "Shuvo's Projects", href: '/shuvos-projects' },
-  { name: 'Portfolio 1.0', href: '/portfolio-1' },
   { name: 'Gallery', href: '/#gallery' },
   { name: 'Services', href: '/#services' },
   { name: 'Reviews', href: '/#testimonials' },
@@ -57,86 +56,103 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-black/10 bg-[#edf0f5]/85 backdrop-blur-md dark:border-white/10 dark:bg-[#080808]/85'
-          : 'border-b border-transparent bg-transparent'
-      }`}
-    >
-      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo */}
-        <a
-          href="#hero"
-          className="text-lg sm:text-xl font-bold tracking-tight text-zinc-900 transition hover:opacity-80 dark:text-white uppercase"
-        >
-          Shazzed<span className="text-zinc-400 dark:text-white/40">.</span>
-        </a>
-
-        {/* Desktop Links */}
-        <div className="hidden items-center gap-6 lg:gap-8 text-sm font-medium text-zinc-600 md:flex dark:text-white/60">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="transition hover:text-zinc-900 dark:hover:text-white"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-
-        {/* Right Actions: Theme Toggle & Resume */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-black/5 text-zinc-700 transition hover:bg-black/10 dark:border-white/10 dark:bg-white/5 dark:text-white cursor-pointer"
-          >
-            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
-
+    <header className="fixed top-3 sm:top-4 inset-x-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none">
+      <nav
+        className={`pointer-events-auto w-full max-w-6xl rounded-full transition-all duration-300 ${
+          mobileMenuOpen ? '!rounded-3xl' : 'rounded-full'
+        } ${
+          scrolled
+            ? 'border border-black/10 bg-white/80 shadow-xl shadow-black/5 backdrop-blur-2xl dark:border-white/15 dark:bg-[#09090b]/80 dark:shadow-black/50 py-2 sm:py-2.5 px-4 sm:px-6'
+            : 'border border-black/10 bg-white/70 shadow-lg shadow-black/[0.03] backdrop-blur-xl dark:border-white/10 dark:bg-[#09090b]/70 dark:shadow-black/35 py-2.5 sm:py-3 px-4 sm:px-6'
+        }`}
+      >
+        <div className="flex items-center justify-between gap-4">
+          {/* Brand Logo */}
           <a
-            href="/shuvos-cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download="Sazzad-Shuvo-CV.pdf"
-            className="btn-neumorphic text-xs !px-3 sm:!px-4 !py-1.5 sm:!py-2 inline-flex items-center gap-1.5"
+            href="#hero"
+            className="text-base sm:text-lg font-bold tracking-tight text-zinc-900 transition hover:opacity-80 dark:text-white uppercase shrink-0"
           >
-            <span>Resume</span>
-            <Download className="h-3.5 w-3.5" />
+            Shazzed<span className="text-[#f59e0b]">.</span>
           </a>
 
-          {/* Mobile Hamburger */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Open menu"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-black/5 text-zinc-700 transition hover:bg-black/10 md:hidden dark:border-white/10 dark:bg-white/5 dark:text-white cursor-pointer"
-          >
-            {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-b border-black/10 bg-[#edf0f5]/95 p-6 backdrop-blur-xl dark:border-white/10 dark:bg-[#080808]/95 animate-in slide-in-from-top-4 duration-300">
-          <div className="flex flex-col space-y-3">
+          {/* Desktop Nav Items (Full for Extra Large) */}
+          <div className="hidden xl:flex items-center gap-1 text-xs font-medium text-zinc-600 dark:text-white/70">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-zinc-700 dark:text-white/80 hover:text-zinc-900 dark:hover:text-white py-1"
+                className="px-2.5 py-1.5 rounded-full transition-all hover:text-zinc-950 hover:bg-black/5 dark:hover:text-white dark:hover:bg-white/10"
               >
                 {item.name}
               </a>
             ))}
           </div>
+
+          {/* Medium/Large Screens (Condensed list so it never overflows) */}
+          <div className="hidden md:flex xl:hidden items-center gap-1 text-xs font-medium text-zinc-600 dark:text-white/70">
+            {navItems.slice(0, 6).map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="px-2 py-1 rounded-full transition-all hover:text-zinc-950 hover:bg-black/5 dark:hover:text-white dark:hover:bg-white/10"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Right Actions: Theme Toggle & Resume Button */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-black/10 bg-black/5 text-zinc-700 transition hover:bg-black/10 dark:border-white/10 dark:bg-white/5 dark:text-white cursor-pointer"
+            >
+              {isDark ? <Sun className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> : <Moon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
+            </button>
+
+            <a
+              href="/shuvos-cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Sazzad-Shuvo-CV.pdf"
+              className="btn-neumorphic text-xs !px-3 sm:!px-4 !py-1 sm:!py-1.5 inline-flex items-center gap-1.5 rounded-full"
+            >
+              <span>Resume</span>
+              <Download className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+            </a>
+
+            {/* Mobile Hamburger */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Open menu"
+              className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-black/10 bg-black/5 text-zinc-700 transition hover:bg-black/10 md:hidden dark:border-white/10 dark:bg-white/5 dark:text-white cursor-pointer"
+            >
+              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Dropdown Menu (Glass Effect) */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-3 pt-3 border-t border-black/10 dark:border-white/10">
+            <div className="flex flex-col space-y-1 pb-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3.5 py-2 rounded-xl text-xs font-medium text-zinc-700 dark:text-white/80 hover:bg-black/5 dark:hover:bg-white/10 hover:text-zinc-950 dark:hover:text-white transition"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 }
